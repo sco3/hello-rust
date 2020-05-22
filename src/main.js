@@ -13,8 +13,6 @@ for (var i = 0; i < n; i++) {
 			str += '.';
 		} else {
 			seed = (((seed + 17) * 13) / 11) & 0xffff;
-			// console.log("seed %d = %d", i + j, seed);
-
 			str += String.fromCharCode(0x30 + (seed % 10));
 		}
 	}
