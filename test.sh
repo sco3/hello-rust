@@ -23,7 +23,7 @@ echo ""
 
 echo '```'
 
-bash -x -c 'cargo build --release '
+bash -x -c 'cargo build --release > /dev/null 2>&1'
 echo ""
 
 target/release/hello_rust 
