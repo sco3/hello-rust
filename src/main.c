@@ -15,21 +15,14 @@ int main(int argc, char **argv) {
 	double num;
 	char str[64] = "00000000.00000000"; // random number placeholder
 	char *err;
-	unsigned char seed1 = 1, seed2 = 1;
-	unsigned char seed;
+	int seed = 1;
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < 17; j++) {
 			if (j == 8) {
 				str[j] = '.';
 			} else {
-
-				seed = (seed1 + seed2) % 10;
-				seed1 = seed2;
-				seed2 = seed;
-
-				//seed = rand()%10;
-
+				seed = (((seed + 11) * 13) / 11) & 0xffff;
 				str[j] = '0' + (seed % 10);
 			}
 		}

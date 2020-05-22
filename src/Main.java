@@ -15,19 +15,16 @@ public class Main {
 		double num = 0;
 		StringBuilder str = new StringBuilder();
 
-		byte seed1 = 1;
-		byte seed2 = 1;
-
+		int seed = 1;
 		for (int i = 0; i < n; i++) {
 			str.setLength(0);
 			for (int j = 0; j < 17; j++) {
 				if (j == 8) {
 					str.append('.');
 				} else {
-					byte seed = (byte) ((seed1 + seed2) % 10);
-					seed1 = seed2;
-					seed2 = seed;
-					char c = (char) (((byte) '0') + seed);
+					seed = (((seed + 11) * 13) / 11) & 0xffff;
+
+					char c = (char) (((byte) '0') + seed % 10);
 					str.append(c);
 				}
 			}

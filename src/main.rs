@@ -5,8 +5,7 @@ fn main() {
 	let cnt = 10_000_000;
 	let mut str = String::new();
 	let mut num: f64 = 0.0;
-	let mut seed1: u8 = 1;
-	let mut seed2: u8 = 1;
+	let mut seed: i32 = 1;
 
 	for _i in 0..cnt {
 		str.clear();
@@ -14,10 +13,9 @@ fn main() {
 			if j == 8 {
 				str.push('.');
 			} else {
-				let seed: u8 = (seed1 + seed2) % 10;
-				seed1 = seed2;
-				seed2 = seed;
-				let c = (('0' as u8) + seed) as char;
+				seed = (((seed + 11) * 13) / 11) & 0xffff;
+				//println!("seed {} = {}", _i + j, seed);
+				let c = (('0' as u8) + ((seed % 10) as u8)) as char;
 				str.push(c);
 			}
 		}
