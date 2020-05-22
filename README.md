@@ -44,7 +44,7 @@ Random numbers parsed: 10000000 str: 15667491.28723270 num: 15667491.287233
 Time: 4318 ms
 ```
 
-Javascript:
+JavaScript:
 ---
 
 ```

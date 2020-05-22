@@ -55,7 +55,7 @@ echo '```'
 
 
 echo ""
-echo Javascript:
+echo JavaScript:
 echo "---"
 echo ""
 
