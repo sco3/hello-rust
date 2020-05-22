@@ -47,4 +47,16 @@ bash -x -c 'native-image -O3 --no-fallback --no-server  -cp target Main target/M
 echo ""
 target/Main
 
+
+
+echo ""
+echo Javascript:
+echo ""
+echo ""
+
+echo '```'
+
+bash -x -c 'node src/main.js'
+
+
 echo '```'
