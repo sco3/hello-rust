@@ -31,6 +31,6 @@ public class Main {
 			num = Double.parseDouble(str.toString());
 		}
 		out.println(format("Random numbers parsed: %d str: %s num: %f", n, str, num));
-		out.println(String.format("+Time: %d ms", currentTimeMillis() - begin));
+		out.println(String.format("Time: %d ms", currentTimeMillis() - begin));
 	}
 }

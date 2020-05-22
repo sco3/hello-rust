@@ -26,7 +26,7 @@ target/release/hello_rust
 
 echo '```'
 
-javac -d target src/Main.java 
+bash -x -c 'javac -d target src/Main.java '
 
 
 echo ""
@@ -37,12 +37,12 @@ echo ""
 echo '```'
 
 
-java -cp target Main 
+java -cp target Main
 
 $HOME/prg/graalvm/bin/java -cp target Main 
 
 
-native-image -O3 --no-fallback --no-server  -cp target Main target/Main > /dev/null
+bash -x -c 'native-image -O3 --no-fallback --no-server  -cp target Main target/Main > /dev/null'
 
 target/Main
 
