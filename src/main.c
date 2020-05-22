@@ -4,29 +4,6 @@
 #include <string.h>
 #include <time.h>
 
-int old_main(int argc, char **argv) {
-	int n = 10000000;
-	if (argc > 1) {
-		n = atol(argv[1]);
-	}
-	double random_value;
-	char str[64] = "00000000.00000000";
-	char *err;
-
-	srand(time(NULL));
-
-	for (int i = 0; i < n; i++) {
-
-		random_value = (double) rand() / RAND_MAX * 2.0 - 1.0;
-
-		sprintf(str, "%lf", random_value);
-
-		random_value = strtod(str, &err);
-	}
-	printf("cnt: %d str: %s num: %lf\n", n, str, random_value);
-
-	return 0;
-}
 int main(int argc, char **argv) {
 
 	clock_t begin = clock();
