@@ -1,8 +1,12 @@
 #!/bin/bash 
 
 
-echo C:
+echo Tests
+echo ---
 echo ""
+
+echo C:
+echo ---
 echo ""
 echo '```'
 
@@ -14,7 +18,7 @@ echo '```'
 
 echo ""
 echo Rust:
-echo ""
+echo "---"
 echo ""
 
 echo '```'
@@ -30,7 +34,7 @@ echo '```'
 
 echo ""
 echo Java:
-echo ""
+echo "---"
 echo ""
 
 echo '```'
@@ -46,12 +50,13 @@ echo ""
 bash -x -c 'native-image -O3 --no-fallback --no-server  -cp target Main target/Main > /dev/null'
 echo ""
 target/Main
+echo '```'
 
 
 
 echo ""
 echo Javascript:
-echo ""
+echo "---"
 echo ""
 
 echo '```'
