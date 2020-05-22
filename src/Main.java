@@ -15,7 +15,8 @@ public class Main {
 		double num = 0;
 		StringBuilder str = new StringBuilder();
 
-		int seed = (int) currentTimeMillis();
+		byte seed1 = 1;
+		byte seed2 = 1;
 
 		for (int i = 0; i < n; i++) {
 			str.setLength(0);
@@ -23,8 +24,10 @@ public class Main {
 				if (j == 8) {
 					str.append('.');
 				} else {
-					seed = (int) ((((seed + 11) << 5) / 11) & 0xffff);
-					char c = (char) (((byte) '0') + (seed % 10));
+					byte seed = (byte) ((seed1 + seed2) % 10);
+					seed1 = seed2;
+					seed2 = seed;
+					char c = (char) (((byte) '0') + seed);
 					str.append(c);
 				}
 			}

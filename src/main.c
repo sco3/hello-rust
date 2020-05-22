@@ -15,16 +15,21 @@ int main(int argc, char **argv) {
 	double num;
 	char str[64] = "00000000.00000000"; // random number placeholder
 	char *err;
-
-	unsigned short seed = clock();
-	//printf("seed size: %d\n ", sizeof(seed));
+	unsigned char seed1 = 1, seed2 = 1;
+	unsigned char seed;
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < 17; j++) {
 			if (j == 8) {
 				str[j] = '.';
 			} else {
-				seed = (((seed + 11) << 5) / 11);
+
+				seed = (seed1 + seed2) % 10;
+				seed1 = seed2;
+				seed2 = seed;
+
+				//seed = rand()%10;
+
 				str[j] = '0' + (seed % 10);
 			}
 		}

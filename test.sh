@@ -26,7 +26,6 @@ target/release/hello_rust
 
 echo '```'
 
-bash -x -c 'javac -d target src/Main.java '
 
 
 echo ""
@@ -36,14 +35,16 @@ echo ""
 
 echo '```'
 
-
+bash -x -c 'javac -d target src/Main.java '
+echo ""
 java -cp target Main
+echo ""
 
 $HOME/prg/graalvm/bin/java -cp target Main 
-
+echo ""
 
 bash -x -c 'native-image -O3 --no-fallback --no-server  -cp target Main target/Main > /dev/null'
-
+echo ""
 target/Main
 
 echo '```'

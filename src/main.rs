@@ -5,7 +5,8 @@ fn main() {
 	let cnt = 10_000_000;
 	let mut str = String::new();
 	let mut num: f64 = 0.0;
-	let mut seed: u16 = (timer.elapsed().subsec_nanos() & 0xffff) as u16;
+	let mut seed1: u8 = 1;
+	let mut seed2: u8 = 1;
 
 	for _i in 0..cnt {
 		str.clear();
@@ -13,8 +14,10 @@ fn main() {
 			if j == 8 {
 				str.push('.');
 			} else {
-				seed = ((seed + 11) << 5) / 11;
-				let c = (('0' as u8) + ((seed % 10) as u8)) as char;
+				let seed: u8 = (seed1 + seed2) % 10;
+				seed1 = seed2;
+				seed2 = seed;
+				let c = (('0' as u8) + seed) as char;
 				str.push(c);
 			}
 		}
