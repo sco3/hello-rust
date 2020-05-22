@@ -13,8 +13,7 @@ fn main() {
 			if j == 8 {
 				str.push('.');
 			} else {
-				seed = (((seed + 11) * 13) / 11) & 0xffff;
-				//println!("seed {} = {}", _i + j, seed);
+				seed = (((seed + 17) * 13) / 11) & 0xffff;
 				let c = (('0' as u8) + ((seed % 10) as u8)) as char;
 				str.push(c);
 			}

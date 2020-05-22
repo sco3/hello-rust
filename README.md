@@ -7,8 +7,8 @@ C:
 ```
 + gcc -O3 src/main.c -o target/main
 
-Random numbers parsed: 10000000 str: 60900853.74552009 num: 60900853.745520
-Time: 1859 ms
+Random numbers parsed: 10000000 str: 15667491.28723270 num: 15667491.287233
+Time: 1858 ms
 ```
 
 Rust:
@@ -16,10 +16,11 @@ Rust:
 
 ```
 + cargo build --release
-    Finished release [optimized] target(s) in 0.01s
+   Compiling hello_rust v0.1.0 (/home/dz/prj/hello_rust)
+    Finished release [optimized] target(s) in 0.38s
 
-Random numbers parsed: 10000000 str: 60900853.74552009 num: 60900853.74552009 
-Time: 1348 ms
+Random numbers parsed: 10000000 str: 15667491.28723270 num: 15667491.2872327 
+Time: 1433 ms
 ```
 
 Java:
@@ -29,18 +30,18 @@ Java:
 + javac -d target src/Main.java
 
 OpenJDK 64-Bit Server VM
-Random numbers parsed: 10000000 str: 60900853.74552009 num: 60900853.745520
-Time: 3004 ms
+Random numbers parsed: 10000000 str: 15667491.28723270 num: 15667491.287233
+Time: 2998 ms
 
 OpenJDK 64-Bit Server VM GraalVM CE 20.1.0
-Random numbers parsed: 10000000 str: 60900853.74552009 num: 60900853.745520
-Time: 2321 ms
+Random numbers parsed: 10000000 str: 15667491.28723270 num: 15667491.287233
+Time: 2328 ms
 
 + native-image -O3 --no-fallback --no-server -cp target Main target/Main
 
 Substrate VM
-Random numbers parsed: 10000000 str: 60900853.74552009 num: 60900853.745520
-Time: 4293 ms
+Random numbers parsed: 10000000 str: 15667491.28723270 num: 15667491.287233
+Time: 4318 ms
 ```
 
 Javascript:
@@ -48,6 +49,7 @@ Javascript:
 
 ```
 + node src/main.js
-Random numbers parsed: 10000000 str: 60900853.74552009 num: 60900853.74552009
+Random numbers parsed: 10000000 str: 15667491.28723270 num: 15667491.2872327
 
-Time: 5086
+Time: 5084
+```
