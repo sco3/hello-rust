@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
 			if (j == 8) {
 				str[j] = '.';
 			} else {
-				seed = (((seed + 17) * 13) / 11) & 0xffff;
+				seed = (((seed + 7) << 4) / 11) & 0xffffff;
 				str[j] = '0' + (seed % 10);
 			}
 		}

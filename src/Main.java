@@ -22,7 +22,7 @@ public class Main {
 				if (j == 8) {
 					str.append('.');
 				} else {
-					seed = (((seed + 17) * 13) / 11) & 0xffff;
+					seed = (((seed + 7) << 4) / 11) & 0xffffff;
 					char c = (char) (((byte) '0') + seed % 10);
 					str.append(c);
 				}

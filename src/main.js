@@ -12,7 +12,7 @@ for (var i = 0; i < n; i++) {
 		if (j == 8) {
 			str += '.';
 		} else {
-			seed = (((seed + 17) * 13) / 11) & 0xffff;
+			seed = (((seed + 7) << 4) / 11) & 0xffffff;
 			str += String.fromCharCode(0x30 + (seed % 10));
 		}
 	}
