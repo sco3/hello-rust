@@ -1,22 +1,21 @@
+C:
+
+
+```
++ gcc -O3 src/main.c -o target/main
+
+Random numbers parsed: 10000000 str: 15821245.15821245 num: 15821245.158212
+Time: 1618 ms
+```
 
 Rust:
 
-```
-$ cargo build --release
-$ ./target/release/hello_world 
-cnt: 10000000 str: 38138138.13813813 num: 381381381.3813813 
-Time: 1165 ms
-```
-
-C:
 
 ```
-$ gcc -O3 main.c -o main
-$ time ./main
-cnt: 10000000 str: 21245158.21245158 num: 212451582.124516
++ cargo build --release
+   Compiling hello_rust v0.1.0 (/home/dz/prj/hello_rust)
+    Finished release [optimized] target(s) in 0.38s
 
-real	0m1.650s
-user	0m1.647s
-sys	0m0.001s
-
+Random numbers parsed: 10000000 str: 43608343.60834360 num: 43608343.6083436 
+Time: 929 ms
 ```
