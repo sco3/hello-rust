@@ -12,28 +12,27 @@ Tests
 C:
 ---
 
-
-\`\`\`
+~~~
 $(bash -x -c 'gcc -O3 src/main.c -o target/main' 2>&1)
 
 $(target/main)
-\`\`\`
+~~~
 
 Rust:
 ---
 
 
-\`\`\`
+~~~
 $(bash -x -c 'cargo build --release > /dev/null 2>&1' 2>&1)
 
 $(target/release/hello_rust)
-\`\`\`
+~~~
 
 Java:
 ---
 
 
-\`\`\`
+~~~
 $(bash -x -c 'javac -d target src/Main.java ' 2>&1)
 
 $(java -cp target Main)
@@ -44,22 +43,22 @@ $(bash -x -c 'native-image -O3 --no-fallback --no-server  -cp target Main target
 
 $(target/Main)
 
-\`\`\`
+~~~
 
 JavaScript:
 ---
 
 
-\`\`\`
+~~~
 $(bash -x -c 'node src/main.js' 2>&1)
 
-\`\`\`
+~~~
 
 Go:
 ---
 
 
-\`\`\`
+~~~
 $(bash -x -c 'go build -o target/maingo src/main.go' 2>&1)
 
 $(target/maingo)
@@ -67,6 +66,17 @@ $(target/maingo)
 $(bash -x -c 'gccgo -O3 -o target/maingccgo src/main.go' 2>&1)
 
 $(target/maingccgo)
-\`\`\`
+~~~
+
+Pascal:
+---
+
+~~~
+$(bash -x -c 'fpc -o"target/mainpas" src/main.pas ' 2>&1 )
+
+$(target/mainpas)
+
+~~~
+
 
 EOF
