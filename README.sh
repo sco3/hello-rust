@@ -68,11 +68,11 @@ $(bash -x -c 'gccgo -O3 -o target/maingccgo src/main.go' 2>&1)
 $(target/maingccgo)
 ~~~
 
-Pascal:
+Free Pascal:
 ---
 
 ~~~
-$(bash -x -c 'fpc -o"target/mainpas" src/main.pas ' 2>&1 )
+$(bash -x -c 'fpc -o"target/mainpas" src/main.pas '  2>&1 | head -n 1  )
 
 $(target/mainpas)
 
