@@ -26,6 +26,6 @@ func main() {
 		num, _ = strconv.ParseFloat(string(str), 10)
 	}
 
-	fmt.Printf("converted: %d str: %s num: %f\n", n, str, num)
+	fmt.Printf("converted: %d str: %s num: %17.8f\n", n, str, num)
 	fmt.Printf("Time: %d ms\n", time.Since(start)/time.Millisecond)
 }
