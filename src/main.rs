@@ -16,11 +16,12 @@ fn main() {
 			} else {
 				seed = (((seed + 7) << 4) / 11) & 0xffffff;
 				let c = (('0' as u8) + ((seed % 10) as u8)) as char;
-				str.push(c);
+				str.push(c)
 			}
 		}
 		num = str.parse().unwrap();
 	}
 	println!("Random numbers parsed: {} str: {} num: {} ", cnt, str, num);
 	println!("Time: {} ms", timer.elapsed().as_millis());
+	
 }

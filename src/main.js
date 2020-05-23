@@ -18,6 +18,5 @@ for (var i = 0; i < n; i++) {
 	}
 	num = parseFloat(str);
 }
-console.log("Random numbers parsed: %d str: %s num: %f\n", n, str, num);
-
+console.log("Random numbers parsed: %d str: %s num: %f", n, str, num);
 console.log('Time: %d ms', new Date() - start);
