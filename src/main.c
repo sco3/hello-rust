@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 		}
 		num = strtod(str, &err);
 	}
-	printf("Random numbers parsed: %d str: %s num: %lf\n", n, str, num);
+	printf("Random numbers parsed: %d str: %s num: %17.8lf\n", n, str, num);
 	clock_t end = clock();
 	double time_spent = (double) (end - begin) / CLOCKS_PER_SEC;
 	printf("Time: %d ms\n", (int) (1000 * time_spent));
