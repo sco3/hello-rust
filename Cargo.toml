@@ -10,4 +10,4 @@ edition = "2018"
 rand = "0.7.3"
 
 [profile.dev]
-opt-level= 3
+opt-level = 3

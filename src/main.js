@@ -20,4 +20,4 @@ for (var i = 0; i < n; i++) {
 }
 console.log("Random numbers parsed: %d str: %s num: %f\n", n, str, num);
 
-console.log('Time: %d', new Date() - start);
+console.log('Time: %d ms', new Date() - start);

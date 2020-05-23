@@ -49,4 +49,4 @@ JavaScript:
 + node src/main.js
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 
-Time: 5138
+Time: 5138 ms

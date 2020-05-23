@@ -1,4 +1,5 @@
 use std::time::Instant;
+mod tests;
 
 fn main() {
 	let timer = Instant::now();
