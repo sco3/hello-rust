@@ -21,7 +21,7 @@ Rust:
 + cargo build --release
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
-Time: 1158 ms
+Time: 1151 ms
 ```
 
 Java:
@@ -33,17 +33,17 @@ Java:
 
 OpenJDK 64-Bit Server VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3063 ms
+Time: 3059 ms
 
 OpenJDK 64-Bit Server VM GraalVM CE 20.1.0
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2315 ms
+Time: 2398 ms
 
 + native-image -O3 --no-fallback --no-server -cp target Main target/Main
 
 Substrate VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 4294 ms
+Time: 4341 ms
 
 ```
 
@@ -54,8 +54,8 @@ JavaScript:
 ```
 + node src/main.js
 
-Random numbers parsed: 10000000 str: 46706439.74837267 num: %17.8f 46706439.74837267
-Time: 5171 ms
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 5300 ms
 
 ```
 
@@ -67,11 +67,11 @@ Go:
 + go build -o target/maingo src/main.go
 
 converted: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2591 ms
+Time: 2622 ms
 
 + gccgo -O3 -o target/maingccgo src/main.go
 
 converted: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2298 ms
+Time: 2312 ms
 ```
 
