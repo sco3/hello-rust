@@ -6,9 +6,12 @@
 
 cat > README.md <<-EOF
 
-#Tests
+Tests
+===
 
-##C:
+C:
+---
+
 
 \`\`\`
 $(bash -x -c 'gcc -O3 src/main.c -o target/main' 2>&1)
@@ -16,7 +19,9 @@ $(bash -x -c 'gcc -O3 src/main.c -o target/main' 2>&1)
 $(target/main)
 \`\`\`
 
-##Rust:
+Rust:
+---
+
 
 \`\`\`
 $(bash -x -c 'cargo build --release > /dev/null 2>&1' 2>&1)
@@ -24,7 +29,9 @@ $(bash -x -c 'cargo build --release > /dev/null 2>&1' 2>&1)
 $(target/release/hello_rust)
 \`\`\`
 
-##Java:
+Java:
+---
+
 
 \`\`\`
 $(bash -x -c 'javac -d target src/Main.java ' 2>&1)
@@ -39,13 +46,17 @@ $(target/Main)
 
 \`\`\`
 
-##JavaScript:
+JavaScript:
+---
+
 
 \`\`\`
 $(bash -x -c 'node src/main.js' 2>&1)
 \`\`\`
 
-##Go:
+Go:
+---
+
 
 \`\`\`
 $(bash -x -c 'go build -o target/maingo src/main.go' 2>&1)
