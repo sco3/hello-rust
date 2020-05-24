@@ -4,6 +4,8 @@
 # eval "echo \"$(cat README.template)\"" > README.md
 # now template inside this script:
 
+rm -f target/*
+
 cat > README.md <<-EOF
 
 Tests
@@ -72,9 +74,9 @@ Free Pascal:
 ---
 
 ~~~
-$(bash -x -c 'fpc -o"target/mainpas" src/main.pas '  2>&1 | head -n 1  )
+$(bash -x -c 'fpc -O3 -otarget/mainpas src/main.pas '  2> /dev/null   )
 
-$(target/mainpas)
+$( target/mainpas )
 
 ~~~
 
