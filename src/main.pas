@@ -22,6 +22,6 @@ begin
   end;
   ToTime := Now;
   DiffMinutes := MillisecondsBetween(ToTime, FromTime);
-  writeln('converted: ', n, ' str: ', str, ' num: ', num: 17: 8);
+  writeln('Random numbers parsed: ', n, ' str: ', str, ' num: ', num: 17: 8);
   writeln('Time: ', DiffMinutes);
 end.
