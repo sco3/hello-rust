@@ -9,7 +9,7 @@ C:
 + gcc -O3 src/main.c -o target/main
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1871 ms
+Time: 1823 ms
 ~~~
 
 Rust:
@@ -20,7 +20,7 @@ Rust:
 + cargo build --release
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
-Time: 1202 ms
+Time: 1164 ms
 ~~~
 
 Java:
@@ -32,17 +32,17 @@ Java:
 
 OpenJDK 64-Bit Server VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3142 ms
+Time: 3081 ms
 
 OpenJDK 64-Bit Server VM GraalVM CE 20.1.0
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2393 ms
+Time: 2330 ms
 
 + native-image -O3 --no-fallback --no-server -cp target Main target/Main
 
 Substrate VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 4404 ms
+Time: 4307 ms
 
 ~~~
 
@@ -54,7 +54,7 @@ JavaScript:
 + node src/main.js
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 5295 ms
+Time: 5323 ms
 
 ~~~
 
@@ -66,27 +66,22 @@ Go:
 + go build -o target/maingo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2557 ms
+Time: 2605 ms
 
 + gccgo -O3 -o target/maingccgo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2320 ms
+Time: 2335 ms
 ~~~
 
 Free Pascal:
 ---
 
 ~~~
-Free Pascal Compiler version 3.0.4 [2019/12/21] for x86_64
-Copyright (c) 1993-2017 by Florian Klaempfl and others
-Target OS: Linux for x86-64
-Compiling src/main.pas
-Linking target/mainpas
-27 lines compiled, 0.1 sec
++ fpc -O3 -otarget/mainpas src/main.pas
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 4350
+Time: 4328
 
 ~~~
 
