@@ -1,10 +1,10 @@
 use std::time::Instant;
 mod tests;
 
-fn main() {
+fn run() {
 	let timer = Instant::now();
 	let cnt = 10_000_000;
-	let mut str = String::new();
+	let mut str = String::with_capacity(17);
 	let mut num: f64 = 0.0;
 	let mut seed: i32 = 1;
 
@@ -23,5 +23,8 @@ fn main() {
 	}
 	println!("Random numbers parsed: {} str: {} num: {} ", cnt, str, num);
 	println!("Time: {} ms", timer.elapsed().as_millis());
-	
+}
+
+fn main() {
+	run();
 }

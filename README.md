@@ -9,7 +9,7 @@ C:
 + gcc -O3 src/main.c -o target/main
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1823 ms
+Time: 1901 ms
 ~~~
 
 Rust:
@@ -20,7 +20,7 @@ Rust:
 + cargo build --release
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
-Time: 1164 ms
+Time: 1225 ms
 ~~~
 
 Java:
@@ -32,17 +32,17 @@ Java:
 
 OpenJDK 64-Bit Server VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3081 ms
+Time: 3061 ms
 
 OpenJDK 64-Bit Server VM GraalVM CE 20.1.0
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2330 ms
+Time: 2379 ms
 
 + native-image -O3 --no-fallback --no-server -cp target Main target/Main
 
 Substrate VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 4307 ms
+Time: 4358 ms
 
 ~~~
 
@@ -54,7 +54,7 @@ JavaScript:
 + node src/main.js
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 5323 ms
+Time: 5276 ms
 
 ~~~
 
@@ -66,12 +66,12 @@ Go:
 + go build -o target/maingo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2605 ms
+Time: 2569 ms
 
 + gccgo -O3 -o target/maingccgo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2335 ms
+Time: 2305 ms
 ~~~
 
 Free Pascal:
@@ -81,8 +81,16 @@ Free Pascal:
 + fpc -O3 -otarget/mainpas src/main.pas
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 4328
+Time: 4305
 
 ~~~
 
+
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
 
