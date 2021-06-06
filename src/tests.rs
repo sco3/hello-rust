@@ -3,7 +3,7 @@ use std::time::Instant;
 #[test]
 fn test() {
 	let mut str = String::new();
-	str.push_str("1");
+	str.push('1');
 	let num: f64 = str.parse().unwrap();
 	println!("num: {}", num);
 }
@@ -13,7 +13,7 @@ fn test2() {
 	let mut str = String::new();
 	str.push_str("2B");
 	let num: f64 = str.parse().unwrap_or_else(|_e| {
-		return 0.0;
+		0.0 //return
 	});
 	println!("num: {}", num);
 }
@@ -21,14 +21,14 @@ fn test2() {
 #[test]
 fn test3() {
 	let mut bytes = String::from("00000000.00000000").into_bytes();
-	bytes[0] = '1' as u8;
+	bytes[0] = b'1';
 	println!("num: {}", String::from_utf8_lossy(&bytes));
 }
 
 #[test]
 fn test4() {
-	let mut bytes = ['.' as u8; 17];
-	bytes[0] = '1' as u8;
+	let mut bytes = [b'.'; 17];
+	bytes[0] = b'1';
 	println!("num: {}", String::from_utf8_lossy(&bytes));
 }
 
@@ -38,15 +38,15 @@ fn pass1() {
 	let cnt = 10;
 	let mut num: f64 = 0.0;
 	let mut seed: i32 = 1;
-	let mut bytes = ['.' as u8; 17];
+	let mut bytes = [b'.' ; 17];
 
 	for _i in 0..cnt {
 		for j in 0..17 {
 			if j == 8 {
-				bytes[j] = '.' as u8;
+				bytes[j] = b'.';
 			} else {
 				seed = (((seed + 7) << 4) / 11) & 0xffffff;
-				let c = (('0' as u8) + ((seed % 10) as u8)) as char;
+				let c = (b'0'  + ((seed % 10) as u8)) as char;
 				bytes[j] = c as u8;
 			}
 		}
@@ -76,7 +76,7 @@ fn pass3() {
 				str.push('.');
 			} else {
 				seed = (((seed + 7) << 4) / 11) & 0xffffff;
-				let c = (('0' as u8) + ((seed % 10) as u8)) as char;
+				let c = (b'0' + ((seed % 10) as u8)) as char;
 				//str.replace_range(j..j, c);
 				str.push(c)
 			}
