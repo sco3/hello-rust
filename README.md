@@ -44,6 +44,18 @@ Substrate VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 4358 ms
 
+
+graalvm-ce-java11-22.2.0:
+
+OpenJDK 64-Bit Server VM 
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 2017 ms
+
+Substrate VM
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 3493 ms
+
+
 ~~~
 
 JavaScript:
