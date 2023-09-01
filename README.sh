@@ -35,9 +35,13 @@ Java:
 
 
 ~~~
+$(java -version 2>&1| tail -n 1)
+
 $(bash -x -c 'javac -d target src/Main.java ' 2>&1)
 
 $(java -cp target Main)
+
+$($HOME/prg/graalvm/bin/java -version 2>&1| tail -n 1)
 
 $($HOME/prg/graalvm/bin/java -cp target Main)
 
