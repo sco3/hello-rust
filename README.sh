@@ -84,5 +84,14 @@ $( target/mainpas )
 
 ~~~
 
+V Lang:
+---
+
+~~~
+$(bash -x -c 'v src -o target/vmain' 2>&1  )
+
+$( target/vmain )
+~~~
+
 
 EOF

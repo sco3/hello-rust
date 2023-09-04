@@ -1,26 +1,31 @@
+module main
+
 import strconv
 import time
 
 fn main() {
-	start := time.new_stopwatch()
-	n := 10000000
-	mut s := "00000000.00000000".bytes()
+	mut start := time.now()
+	mut n := 10000000
 	mut seed := u32(1)
 	mut num := 0.0
-
+	mut sstr := '00000000.00000000'
+	mut str := sstr.bytes()
 	for i := 0; i < n; i++ {
 		for j := 0; j < 17; j++ {
 			if j == 8 {
-				s[j] = 64 // '.'.bytes()[0]
+				str[j] = `.`
 			} else {
 				seed = (((seed + 7) << 4) / 11) & 0xffffff
-				s[j] = u8(0x30 + (seed % 10))
+				str[j] = u8(0x30 + (seed % 10))
 			}
 		}
-
-		num = strconv.atof64(s.bytestr()) or { 0 }
+		// sstr = str.bytestr()
+		unsafe {
+			sstr = tos(&str[0], str.len)
+			num = strconv.atof_quick(sstr) 
+		}
+		// println('str: $sstr num: ${num:17.8f}')
 	}
-
-	println('Random numbers parsed: ${n} str: ${s.bytestr} num: ${num}')
-	println('Time: ${start.elapsed().milliseconds()} ms\n')
+	println('Random numbers parsed: ${n} str: ${sstr} num: ${num:17.8f}')
+	println('Time: ${time.since(start) / time.millisecond} ms')
 }
