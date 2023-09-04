@@ -88,7 +88,15 @@ V Lang:
 ---
 
 ~~~
-$(bash -x -c 'v src -o target/vmain' 2>&1  )
+Unsafe:
+
+$(bash -x -c 'v src/main.v  -o target/vmain' 2>&1  )
+
+$( target/vmain )
+
+With strings.Builder
+
+$(bash -x -c 'v -autofree src/main-builder.v  -o target/vmain' 2>&1  )
 
 $( target/vmain )
 ~~~
