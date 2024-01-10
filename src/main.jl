@@ -2,8 +2,10 @@
 
 
 using Printf
+using Dates
 
 function run()
+   start = now()
    str = collect("00000000.00000000")
    seed = 1
    num = 0
@@ -20,6 +22,7 @@ function run()
     num = parse(Float32, fstr)
    end
    @printf "Random numbers parsed: %d str: %s num: %17.8f\n" n fstr num
+   @printf "Time: %d ms\n" ((now()-start).value)
 end
 
-@time run()
+run()
