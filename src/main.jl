@@ -5,8 +5,8 @@ using Printf
 
 function run()
    str = collect("00000000.00000000")
-   seed = Int32(1)
-   num = Float32(0)
+   seed = 1
+   num = 0
    n = 10000000
    fstr = ""
    for i in 1:n
