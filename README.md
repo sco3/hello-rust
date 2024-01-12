@@ -109,13 +109,12 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1538 ms
 ~~~
 
+
 Julia
 ---
 
 ~~~
 + julia -O 3 src/main.jl
-
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706440.00000000
-Time: 5644 ms
+Time: 5321 ms
 ~~~
-
