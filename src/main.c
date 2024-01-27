@@ -1,3 +1,5 @@
+//usr/bin/gcc -O3 $0 && exec ./a.out "$@"
+
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
