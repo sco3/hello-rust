@@ -135,4 +135,15 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 3783 ms
 
 ~~~
-`
+
+Graalpy
+---
+
+~~~
++ /home/dz/prg/graalpy/bin/python3 --version
+GraalPy 3.10.8 (Oracle GraalVM Native 23.1.2)
++ /home/dz/prg/graalpy/bin/python3 src/main.py
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 7306 ms
+~~~
