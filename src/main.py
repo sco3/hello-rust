@@ -14,8 +14,6 @@ for i in range (n):
             str[j] = chr(0x30 + (seed % 10))
     num = float("".join(str));        
 print("")
-print("Random numbers parsed: %d str: %s num: %f" % (n, "".join(str), num))
+print("Random numbers parsed: %d str: %s num: %17.8f" % (n, "".join(str), num))
 print('Time: %d ms' % ((time.time() - start) * 1000))
 
-# Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.748373
-# Time: 287109 ms
