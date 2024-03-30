@@ -41,18 +41,6 @@ Time: 5485 ms
 
 ~~~
 
-JavaScript:
----
-
-
-~~~
-+ node src/main.js
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 5929 ms
-
-~~~
-
 JavaScript
 ---
 
