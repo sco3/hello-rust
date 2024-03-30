@@ -2,34 +2,6 @@
 Tests
 ===
 
-Java:
----
-
-
-~~~
-Java HotSpot(TM) 64-Bit Server VM (build 17.0.8+9-LTS-211, mixed mode, sharing)
-
-+ javac -d target src/Main.java
-
-Java HotSpot(TM) 64-Bit Server VM
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3131 ms
-
-OpenJDK 64-Bit Server VM GraalVM CE 17.0.7+7.1 (build 17.0.7+7-jvmci-23.0-b12, mixed mode, sharing)
-
-OpenJDK 64-Bit Server VM
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2831 ms
-
-+ native-image -O3 --no-fallback --no-server -cp target Main target/Main
-Warning: Ignoring server-mode native-image argument --no-server.
-
-Substrate VM
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 5485 ms
-
-~~~
-
 JavaScript
 ---
 
