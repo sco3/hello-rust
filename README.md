@@ -69,17 +69,6 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 2632 ms
 ~~~
 
-Free Pascal:
----
-
-~~~
-+ fpc -O3 -otarget/mainpas src/main.pas
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 4845
-
-~~~
-
 JavaScript
 ---
 
@@ -146,4 +135,15 @@ C:
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1585 ms
+~~~
+
+Free Pascal:
+---
+
+~~~
++ fpc -O3 -otarget/mainpas src/main.pas
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 3254
+
 ~~~
