@@ -109,14 +109,13 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1538 ms
 ~~~
 
-
 Julia
 ---
 
 ~~~
 + julia -O 3 src/main.jl
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706440.00000000
-Time: 5321 ms
+Time: 4903 ms
 ~~~
 
 Python
@@ -126,5 +125,15 @@ Python
 + python src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 280458 ms
+Time: 70034 ms
+~~~
+
+Jython
+---
+
+~~~
++ java -jar lib/jython-standalone-2.7.3.jar src/main.py
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 42129 ms
 ~~~
