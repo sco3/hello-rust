@@ -2,16 +2,6 @@
 Tests
 ===
 
-C:
----
-
-~~~
-+ gcc -O3 src/main.c -o target/main
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1924 ms
-~~~
-
 Rust:
 ---
 
@@ -146,4 +136,14 @@ With strings.Builder
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1139 ms
+~~~
+
+C:
+---
+
+~~~
++ gcc -O3 src/main.c -o target/main
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1585 ms
 ~~~
