@@ -146,7 +146,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)
 
 Java HotSpot(TM) 64-Bit Server VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1901 ms
+Time: 1923 ms
 
 
 + /home/dz/prg/graalvm/bin/javac -d target src/Main.java
@@ -155,16 +155,15 @@ OpenJDK 64-Bit Server VM GraalVM CE 22.2.0 (build 11.0.16+8-jvmci-22.2-b06, mixe
 
 OpenJDK 64-Bit Server VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1662 ms
+Time: 1732 ms
 
-+ /home/dz/prg/graalvm/bin/native-image -O3 --no-fallback --no-server -cp target Main target/Main
-Warning: Ignoring server-mode native-image argument --no-server.
++ /home/dz/prg/graalvm/bin/native-image -O3 --no-fallback -cp target Main target/Main
 WARNING: Unknown module: org.graalvm.nativeimage.llvm specified to --add-exports
 WARNING: Unknown module: org.graalvm.nativeimage.llvm specified to --add-exports
 WARNING: Unknown module: org.graalvm.nativeimage.llvm specified to --add-exports
 
 Substrate VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3307 ms
+Time: 4219 ms
 
 ~~~

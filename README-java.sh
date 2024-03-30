@@ -19,7 +19,7 @@ $(~/prg/graalvm/bin/java -version 2>&1| tail -n 1)
 
 $(~/prg/graalvm/bin/java -cp target Main)
 
-$(bash -x -c '~/prg/graalvm/bin/native-image -O3 --no-fallback --no-server  -cp target Main target/Main > /dev/null' 2>&1)
+$(bash -x -c '~/prg/graalvm/bin/native-image -O3 --no-fallback -cp target Main target/Main > /dev/null' 2>&1)
 
 $(target/Main)
 
