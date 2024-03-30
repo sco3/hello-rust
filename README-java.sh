@@ -1,0 +1,27 @@
+#!/bin/bash 
+
+cat >> README.md <<-EOF
+
+Java:
+---
+
+~~~
+$(~/prg/java-21/bin/java -version 2>&1| tail -n 1)
+
+$(bash -x -c '~/prg/java-21/bin/javac -d target src/Main.java ' 2>&1)
+
+$(~/prg/java-21/bin/java -cp target Main)
+
+
+$(bash -x -c '~/prg/graalvm/bin/javac -d target src/Main.java ' 2>&1)
+
+$(~/prg/graalvm/bin/java -version 2>&1| tail -n 1)
+
+$(~/prg/graalvm/bin/java -cp target Main)
+
+$(bash -x -c '~/prg/graalvm/bin/native-image -O3 --no-fallback --no-server  -cp target Main target/Main > /dev/null' 2>&1)
+
+$(target/Main)
+
+~~~
+EOF
