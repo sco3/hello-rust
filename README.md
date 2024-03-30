@@ -2,17 +2,6 @@
 Tests
 ===
 
-Rust:
----
-
-
-~~~
-+ cargo build --release
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
-Time: 751 ms
-~~~
-
 Java:
 ---
 
@@ -133,4 +122,15 @@ Time: 1105 ms
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1356 ms
+~~~
+
+Rust:
+---
+
+
+~~~
++ cargo build --release
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
+Time: 463 ms
 ~~~
