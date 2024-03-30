@@ -90,25 +90,6 @@ Time: 4845
 
 ~~~
 
-V Lang:
----
-
-~~~
-Unsafe: (byte array with tos() to string conversion)
-
-+ v -prod src/main.v -o target/vmain
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 671 ms
-
-With strings.Builder
-
-+ v -prod -autofree src/main-builder.v -o target/vmain
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1538 ms
-~~~
-
 JavaScript
 ---
 
@@ -146,4 +127,23 @@ Python
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 35254 ms
+~~~
+
+V Lang:
+---
+
+~~~
+Unsafe: (byte array with tos() to string conversion)
+
++ v -prod src/main.v -o target/vmain
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 448 ms
+
+With strings.Builder
+
++ v -prod -autofree src/main-builder.v -o target/vmain
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1139 ms
 ~~~
