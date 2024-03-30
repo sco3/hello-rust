@@ -4,3 +4,10 @@ src/main
 .classpath
 bin
 .project
+**/a.out
+**/main
+**/main.s
+**/main.wpo
+**/main.s
+**/main.o
+**/.*
