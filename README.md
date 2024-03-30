@@ -53,22 +53,6 @@ Time: 5929 ms
 
 ~~~
 
-Go:
----
-
-
-~~~
-+ go build -o target/maingo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1810 ms
-
-+ gccgo -O3 -o target/maingccgo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2632 ms
-~~~
-
 JavaScript
 ---
 
@@ -146,4 +130,19 @@ Free Pascal:
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 3254
 
+~~~
+
+Go:
+---
+
+~~~
++ go build -o target/maingo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1105 ms
+
++ gccgo -O3 -o target/maingccgo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1356 ms
 ~~~

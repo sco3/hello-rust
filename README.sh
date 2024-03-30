@@ -11,15 +11,6 @@ cat > README.md <<-EOF
 Tests
 ===
 
-C:
----
-
-~~~
-$(bash -x -c 'gcc -O3 src/main.c -o target/main' 2>&1)
-
-$(target/main)
-~~~
-
 Rust:
 ---
 
