@@ -109,7 +109,6 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1538 ms
 ~~~
 
-
 JavaScript
 ---
 
@@ -120,14 +119,13 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 3377 ms
 ~~~
 
-Python
+Julia
 ---
 
 ~~~
-+ python src/main.py
-
++ julia -O 3 src/main.jl
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 45248 ms
+Time: 6709 ms
 ~~~
 
 Jython
@@ -137,14 +135,15 @@ Jython
 + java -jar lib/jython-standalone-2.7.3.jar src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 34876 ms
+Time: 28315 ms
 ~~~
 
-Julia
+Python
 ---
 
 ~~~
-+ julia -O 3 src/main.jl
++ python src/main.py
+
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 6709 ms
+Time: 35254 ms
 ~~~
