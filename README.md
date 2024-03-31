@@ -21,26 +21,6 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 6709 ms
 ~~~
 
-Jython
----
-
-~~~
-+ java -jar lib/jython-standalone-2.7.3.jar src/main.py
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 28315 ms
-~~~
-
-Python
----
-
-~~~
-+ python src/main.py
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 35254 ms
-~~~
-
 V Lang:
 ---
 
@@ -134,6 +114,27 @@ Substrate VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 3783 ms
 
+~~~
+
+
+Python
+---
+
+~~~
++ python src/main.py
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 35254 ms
+~~~
+
+Jython
+---
+
+~~~
++ java -jar lib/jython-standalone-2.7.3.jar src/main.py
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 28315 ms
 ~~~
 
 Graalpy
