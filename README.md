@@ -116,7 +116,6 @@ Time: 3783 ms
 
 ~~~
 
-
 Python
 ---
 
@@ -124,28 +123,17 @@ Python
 + python src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 35254 ms
+Time: 31836 ms
 ~~~
 
 Jython
 ---
 
 ~~~
-+ java -jar lib/jython-standalone-2.7.3.jar src/main.py
++ java -jar lib/jython-standalone-2.7.3.jar src/main.jpy
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 28315 ms
-~~~
-
-Graalpy
----
-
-~~~
-+ /home/dz/prg/graalpy/bin/python3 --version
-GraalPy 3.10.8 (Oracle GraalVM Native 23.1.2)
-+ /home/dz/prg/graalpy/bin/python3 src/main.py
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 7306 ms
+Time: 25390 ms
 ~~~
 
 Graalpy
@@ -157,5 +145,5 @@ GraalPy 3.10.13 (Oracle GraalVM Native 24.0.0)
 + /home/dz/prg/graalpy/bin/python3 src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 6592 ms
+Time: 5898 ms
 ~~~
