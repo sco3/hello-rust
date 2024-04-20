@@ -157,7 +157,7 @@ mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-mojo
 Random numbers parsed:  10000000  str:  46706439.74837267 num:  46706439.748372667
-Time:  6753  ms
+Time:  6357  ms
 
 Unsafe:
 
@@ -166,5 +166,5 @@ mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-u-mojo
 Random numbers parsed:  10000000  str:  46706439.74837267 num:  46706439.748372667
-Time:  5051  ms
+Time:  5065  ms
 ~~~

@@ -19,32 +19,25 @@ fn toFloat64(inout str: String) raises -> Float64:
     return result
 
 
-fn gen(inout seed: Int, inout alist: List[Int8]):
-    """
-    Generates pseudo random number.
-    """
-    for j in range(BUFLEN):
-        if j != 8:
-            seed = (((seed + 7) << 4) // 11) & 0xFFFFFF
-            alist[j] = 0x30 + (seed % 10)
-        else:
-            alist[j] = ord(".")
-
-
 fn main() raises:
     """
     Method to measure execution time.
     """
-    var start = time.now()
+    var start: Int = time.now()
     var num: Float64 = 0.0
     var n: Int = 10_000_000
     var seed: Int = 1
     var slist: List[Int8] = List[Int8]()
     var s: String = ""
     slist.resize(BUFLEN + 1, 0)
-
+    slist[BUFHALF] = ord(".")
     for _ in range(n):  # {
-        gen(seed, slist)
+        for j in range(BUFLEN):  # {
+            if j != 8:  # {
+                seed = (((seed + 7) << 4) // 11) & 0xFFFFFF
+                slist[j] = 0x30 + (seed % 10)
+            # }
+        # }
         s = String(slist)
         num = toFloat64(s)
     # }
