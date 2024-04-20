@@ -5,7 +5,7 @@ Author: Sco3
 Date: 2024-04-20
 """
 
-from collections import List
+from memory.unsafe import Pointer
 import time
 
 alias BUFLEN: Int = 17
@@ -19,7 +19,7 @@ fn toFloat64(inout str: String) raises -> Float64:
     return result
 
 
-fn gen(inout seed: Int, inout alist: List[Int8]):
+fn gen(inout seed: Int, inout alist: Pointer[Int8]):
     """
     Generates pseudo random number.
     """
@@ -27,8 +27,6 @@ fn gen(inout seed: Int, inout alist: List[Int8]):
         if j != 8:
             seed = (((seed + 7) << 4) // 11) & 0xFFFFFF
             alist[j] = 0x30 + (seed % 10)
-        else:
-            alist[j] = ord(".")
 
 
 fn main() raises:
@@ -39,13 +37,13 @@ fn main() raises:
     var num: Float64 = 0.0
     var n: Int = 10_000_000
     var seed: Int = 1
-    var slist: List[Int8] = List[Int8]()
-    var s: String = ""
-    slist.resize(BUFLEN + 1, 0)
+    var buf: Pointer[Int8] = Pointer[Int8].alloc(BUFLEN + 1)
+    buf[BUFLEN] = 0
+    buf[BUFHALF] = ord(".")
+    var s: String = String(buf, BUFLEN + 1)
 
     for _ in range(n):  # {
-        gen(seed, slist)
-        s = String(slist)
+        gen(seed, buf)
         num = toFloat64(s)
     # }
 
