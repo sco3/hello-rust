@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 	}
 	double num;
 	char str[64] = "00000000.00000000"; // random number placeholder
-	char *err;
+	const char *err;
 	int seed = 1;
 
 	for (int i = 0; i < n; i++) {
@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 			}
 		}
 		//num = strtod(str, &err);
-		fast_double_parser::parse_number (str,&num);
+		err = fast_double_parser::parse_number (str,&num);
 	}
 	printf("Random numbers parsed: %d str: %s num: %17.8lf\n", n, str, num);
 	clock_t end = clock();
