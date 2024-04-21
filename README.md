@@ -148,6 +148,7 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 5898 ms
 ~~~
 
+
 Mojo:
 ---
 
@@ -157,7 +158,7 @@ mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-mojo
 Random numbers parsed:  10000000  str:  46706439.74837267 num:  46706439.748372667
-Time:  6065  ms
+Time:  1569  ms
 
 Unsafe:
 
@@ -166,5 +167,5 @@ mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-u-mojo
 Random numbers parsed:  10000000  str:  46706439.74837267 num:  46706439.748372667
-Time:  3084  ms
+Time:  776  ms
 ~~~
