@@ -14,9 +14,14 @@ $(target/main)
 
 Fast double parser function:
 
-$(bash -x -c 'g++ -O3 src/main-fast-dp.c -o target/main-fast-dp' 2>&1)
+$(bash -x -c 'g++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp' 2>&1)
 
 $(target/main-fast-dp)
+
+
+$(bash -x -c 'clang++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp-clang' 2>&1)
+
+$(target/main-fast-dp-clang)
 
 
 ~~~

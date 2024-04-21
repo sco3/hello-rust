@@ -1,23 +1,4 @@
 
-C:
----
-
-~~~
-+ gcc -O3 src/main.c -o target/main
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1441 ms
-
-Fast double parser function:
-
-+ g++ -O3 src/main-fast-dp.c -o target/main-fast-dp
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 411 ms
-
-
-~~~
-
 Go:
 ---
 
@@ -187,5 +168,31 @@ Time: 1292 ms
 Substrate VM
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 4447 ms
+
+~~~
+
+
+C:
+---
+
+~~~
++ gcc -O3 src/main.c -o target/main
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1399 ms
+
+Fast double parser function:
+
++ g++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 405 ms
+
+
++ clang++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp-clang
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 551 ms
+
 
 ~~~
