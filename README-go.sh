@@ -8,6 +8,8 @@ Go:
 ---
 
 ~~~
+$(go version)
+
 $(bash -x -c 'go build -o target/maingo src/main.go' 2>&1)
 
 $(target/maingo)
@@ -15,5 +17,13 @@ $(target/maingo)
 $(bash -x -c 'gccgo -O3 -o target/maingccgo src/main.go' 2>&1)
 
 $(target/maingccgo)
+
+
+$(bash  -c 'PATH=~/go-1.20.3/bin:$PATH ; set -x ;  tinygo build -o target/main-tiny  -opt=2 src/main.go' 2>&1)
+
+$(target/main-tiny)
+
+
+
 ~~~
 EOF
