@@ -40,16 +40,6 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1139 ms
 ~~~
 
-C:
----
-
-~~~
-+ gcc -O3 src/main.c -o target/main
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1585 ms
-~~~
-
 Free Pascal:
 ---
 
@@ -168,4 +158,25 @@ mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 + target/main-u-mojo
 Random numbers parsed:  10000000  str:  46706439.74837267 num:  46706439.748372667
 Time:  776  ms
+~~~
+
+C:
+---
+
+~~~
++ gcc -O3 src/main.c -o target/main
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1716 ms
+
++ g++ -O3 src/main-fast_dp.c -o target/main-fast-dp
+src/main-fast_dp.c: In function ‘int main(int, char**)’:
+src/main-fast_dp.c:33:50: warning: ignoring return value of ‘const char* fast_double_parser::parse_number(const char*, double*)’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+   33 |                 fast_double_parser::parse_number (str,&num);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 410 ms
+
+
 ~~~
