@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+source ./cpu-governor.sh
+
+
 cat >> README.md <<-EOF
 
 Julia
