@@ -13,7 +13,7 @@ compileJava   {
 
 repositories {
     flatDir {
-	    dirs "lib"
+        dirs "lib"
     }
 }
 
@@ -29,5 +29,5 @@ application {
         mainClass = 'sco3.MainFast'
     } else {
         mainClass = 'sco3.Main'
-    }  
+    }
 }
