@@ -180,6 +180,7 @@ Time: 3947 ms
 
 ~~~
 
+
 Go:
 ---
 
@@ -189,14 +190,14 @@ go version go1.22.2 linux/amd64
 + go build -o target/maingo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1001 ms
+Time: 1024 ms
 
 Unsafe:
 
 + go build -o target/main-unsafe-go src/main-unsafe.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 974 ms
+Time: 970 ms
 
 
 Gccgo:
@@ -204,7 +205,7 @@ Gccgo:
 + gccgo -O3 -o target/maingccgo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1357 ms
+Time: 1354 ms
 
 
 Tinygo:
@@ -212,14 +213,14 @@ Tinygo:
 + tinygo build -o target/main-tiny -opt=2 src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1313 ms
+Time: 1324 ms
 
 Unsafe:
 
 + tinygo build -o target/main-unsafe-tiny -opt=2 src/main-unsafe.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 755 ms
+Time: 761 ms
 
 
 
