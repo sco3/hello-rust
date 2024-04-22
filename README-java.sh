@@ -9,14 +9,14 @@ Java:
 ---
 
 ~~~
-$(~/prg/java-21/bin/java -version 2>&1| tail -n 1)
+$(~/prg/java-21o/bin/java -version 2>&1| tail -n 1)
 
-$(bash -x -c '~/prg/java-21/bin/javac -d target src/Main.java ' 2>&1)
+$(bash -x -c '~/prg/java-21o/bin/javac -d target src/main/java/Main.java ' 2>&1)
 
-$(~/prg/java-21/bin/java -cp target Main)
+$(~/prg/java-21o/bin/java -cp target Main)
 
 
-$(bash -x -c '~/prg/graalvm/bin/javac -d target src/Main.java ' 2>&1)
+$(bash -x -c '~/prg/graalvm/bin/javac -d target src/main/java/Main.java ' 2>&1)
 
 $(~/prg/graalvm/bin/java -version 2>&1| tail -n 1)
 
@@ -25,13 +25,11 @@ $(~/prg/graalvm/bin/java -cp target Main)
 
 Fast double parser:
 
-$(bash -x -c '~/prg/graalvm/bin/javac  -cp "lib/*" -d target src/MainFast.java ' 2>&1)
+$(bash -x -c '~/prg/graalvm/bin/javac  -cp "lib/*" -d target src/main/java/MainFast.java ' 2>&1)
 
 $(~/prg/graalvm/bin/java -version 2>&1| tail -n 1)
 
 $(~/prg/graalvm/bin/java -cp "lib/*:target" MainFast)
-
-
 
 
 

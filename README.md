@@ -111,50 +111,6 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1069 ms
 ~~~
 
-Java:
----
-
-~~~
-OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
-
-+ /home/dz/prg/java-21/bin/javac -d target src/Main.java
-
-OpenJDK 64-Bit Server VM
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2127 ms
-
-
-+ /home/dz/prg/graalvm/bin/javac -d target src/Main.java
-
-OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
-
-OpenJDK 64-Bit Server VM
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2169 ms
-
-
-Fast double parser:
-
-+ /home/dz/prg/graalvm/bin/javac -cp 'lib/*' -d target src/MainFast.java
-
-OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
-
-OpenJDK 64-Bit Server VM
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1292 ms
-
-
-
-
-
-+ /home/dz/prg/graalvm/bin/native-image -O3 --no-fallback -cp target Main target/Main
-
-Substrate VM
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 4447 ms
-
-~~~
-
 
 C:
 ---
@@ -204,5 +160,46 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1566 ms
 
 
+~~~
+
+Java:
+---
+
+~~~
+Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)
+
++ /home/dz/prg/java-21o/bin/javac -d target src/main/java/Main.java
+
+Java HotSpot(TM) 64-Bit Server VM Main
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 2169 ms
+
+
++ /home/dz/prg/graalvm/bin/javac -d target src/main/java/Main.java
+
+OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
+
+OpenJDK 64-Bit Server VM Main
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1782 ms
+
+
+Fast double parser:
+
++ /home/dz/prg/graalvm/bin/javac -cp 'lib/*' -d target src/main/java/MainFast.java
+
+OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
+
+OpenJDK 64-Bit Server VM MainFast
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1044 ms
+
+
+
++ /home/dz/prg/graalvm/bin/native-image -O3 --no-fallback -cp target Main target/Main
+
+Substrate VM Main
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 3947 ms
 
 ~~~

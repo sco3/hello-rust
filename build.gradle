@@ -1,0 +1,33 @@
+plugins {
+    id "java"
+    id "application"
+}
+
+group = "sco3"
+version = "1.0.0-SNAPSHOT"
+
+compileJava   {
+  sourceCompatibility = '21'
+  targetCompatibility = '21'
+}
+
+repositories {
+    flatDir {
+	    dirs "lib"
+    }
+}
+
+dependencies {
+    testImplementation "junit:junit:4.13.2"
+    implementation files("lib/reader-1.0.0-SNAPSHOT.jar")
+    implementation files("lib/fastdoubleparser-java21-1.0.0.jar")
+}
+
+
+application {
+    if (project.hasProperty("fast")) {
+        mainClass = 'sco3.MainFast'
+    } else {
+        mainClass = 'sco3.Main'
+    }  
+}

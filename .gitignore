@@ -11,3 +11,4 @@ bin
 **/main.s
 **/main.o
 **/.*
+/build/
