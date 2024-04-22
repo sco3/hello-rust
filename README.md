@@ -137,30 +137,6 @@ Time: 551 ms
 
 ~~~
 
-Go:
----
-
-~~~
-go version go1.22.2 linux/amd64
-
-+ go build -o target/maingo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1322 ms
-
-+ gccgo -O3 -o target/maingccgo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2324 ms
-
-
-+ tinygo build -o target/main-tiny -opt=2 src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1566 ms
-
-
-~~~
 
 Java:
 ---
@@ -201,5 +177,40 @@ Time: 1044 ms
 Substrate VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 3947 ms
+
+~~~
+
+Go:
+---
+
+~~~
+go version go1.22.2 linux/amd64
+
++ go build -o target/maingo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1012 ms
+
+Unsafe:
+
++ go build -o target/main-unsafe-go src/main-unsafe.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 959 ms
+
+
+
++ gccgo -O3 -o target/maingccgo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1323 ms
+
+
++ tinygo build -o target/main-tiny -opt=2 src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1315 ms
+
+
 
 ~~~

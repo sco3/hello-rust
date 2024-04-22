@@ -14,6 +14,14 @@ $(bash -x -c 'go build -o target/maingo src/main.go' 2>&1)
 
 $(target/maingo)
 
+Unsafe:
+
+$(bash -x -c 'go build -o target/main-unsafe-go src/main-unsafe.go' 2>&1)
+
+$(target/main-unsafe-go)
+
+
+
 $(bash -x -c 'gccgo -O3 -o target/maingccgo src/main.go' 2>&1)
 
 $(target/maingccgo)
