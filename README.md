@@ -178,11 +178,7 @@ Unsafe:
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 794 ms
 
-
-
 ~~~
-
-
 
 Java:
 ---
@@ -194,7 +190,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)
 
 Java HotSpot(TM) 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2056 ms
+Time: 2015 ms
 
 
 + /home/dz/prg/graalvm/bin/javac -d target src/main/java/Main.java
@@ -203,7 +199,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1782 ms
+Time: 1786 ms
 
 
 Fast double parser:
@@ -214,7 +210,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 688 ms
+Time: 705 ms
 
 
 
@@ -222,6 +218,16 @@ Time: 688 ms
 
 Substrate VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3899 ms
+Time: 3950 ms
+
+
+Fast double parser (native java executable):
+
+
++ /home/dz/prg/graalvm/bin/native-image -O3 --no-fallback -cp 'target:lib/*' MainFast target/MainFast
+
+Substrate VM MainFast
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 863 ms
 
 ~~~

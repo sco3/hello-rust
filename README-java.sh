@@ -37,5 +37,13 @@ $(bash -x -c '~/prg/graalvm/bin/native-image -O3 --no-fallback -cp target Main t
 
 $(target/Main)
 
+
+Fast double parser (native java executable):
+
+
+$(bash -x -c '~/prg/graalvm/bin/native-image -O3 --no-fallback -cp "target:lib/*" MainFast target/MainFast > /dev/null' 2>&1)
+
+$(target/MainFast)
+
 ~~~
 EOF
