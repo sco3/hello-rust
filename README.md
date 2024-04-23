@@ -137,6 +137,52 @@ Time: 551 ms
 
 ~~~
 
+Go:
+---
+
+~~~
+go version go1.22.2 linux/amd64
+
++ go build -o target/maingo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1106 ms
+
+Unsafe:
+
++ go build -o target/main-unsafe-go src/main-unsafe.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1253 ms
+
+
+Gccgo:
+
++ gccgo -O3 -o target/maingccgo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1732 ms
+
+
+Tinygo:
+
++ tinygo build -o target/main-tiny -opt=2 src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1388 ms
+
+Unsafe:
+
++ tinygo build -o target/main-unsafe-tiny -opt=2 src/main-unsafe.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 794 ms
+
+
+
+~~~
+
+
 
 Java:
 ---
@@ -148,7 +194,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)
 
 Java HotSpot(TM) 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2169 ms
+Time: 2056 ms
 
 
 + /home/dz/prg/graalvm/bin/javac -d target src/main/java/Main.java
@@ -168,7 +214,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1044 ms
+Time: 688 ms
 
 
 
@@ -176,52 +222,6 @@ Time: 1044 ms
 
 Substrate VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3947 ms
-
-~~~
-
-
-Go:
----
-
-~~~
-go version go1.22.2 linux/amd64
-
-+ go build -o target/maingo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1024 ms
-
-Unsafe:
-
-+ go build -o target/main-unsafe-go src/main-unsafe.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 970 ms
-
-
-Gccgo:
-
-+ gccgo -O3 -o target/maingccgo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1354 ms
-
-
-Tinygo:
-
-+ tinygo build -o target/main-tiny -opt=2 src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1324 ms
-
-Unsafe:
-
-+ tinygo build -o target/main-unsafe-tiny -opt=2 src/main-unsafe.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 761 ms
-
-
+Time: 3899 ms
 
 ~~~

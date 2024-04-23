@@ -19,7 +19,7 @@ func main() {
 		for j := 0; j < 17; j++ {
 			if j != 8 {
 				seed = (((seed + 7) << 4) / 11) & 0xffffff
-				str[j] = byte(0x30 + (seed % 10))
+				str[j] = byte('0' + (seed % 10))
 			}
 		}
 
