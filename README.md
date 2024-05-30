@@ -231,3 +231,18 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 863 ms
 
 ~~~
+
+Dart:
+---
+
+~~~
+Dart SDK version: 3.4.1 (stable) (Tue May 21 15:46:25 2024 +0000) on "linux_x64"
+
++ dart compile exe -o target/maindart src/main.dart
+Generated: /home/dz/prj/hello_rust/target/maindart
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 2733 ms
+
+
+~~~
