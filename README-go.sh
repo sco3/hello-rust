@@ -41,6 +41,10 @@ $(bash  -c 'PATH=~/go-1.20.3/bin:$PATH ; set -x ;  tinygo build -o target/main-u
 $(target/main-unsafe-tiny)
 
 
+Gop:
+$(bash  -x -c 'gop build -o target/main-gop  src/main.go' 2>&1)
+
+$(target/main-gop)
 
 ~~~
 EOF

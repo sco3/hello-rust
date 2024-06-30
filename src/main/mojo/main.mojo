@@ -12,12 +12,6 @@ alias BUFLEN: Int = 17
 alias BUFHALF: Int = BUFLEN // 2
 
 
-fn toFloat64(inout str: String) raises -> Float64:
-    var hi: Int = atol(str[0:BUFHALF])
-    var lo: Int = atol(str[BUFHALF + 1 : BUFLEN])
-    var result: Float64 = hi + lo * 1e-8
-    return result
-
 
 fn main() raises:
     """
@@ -27,7 +21,7 @@ fn main() raises:
     var num: Float64 = 0.0
     var n: Int = 10_000_000
     var seed: Int = 1
-    var slist: List[Int8] = List[Int8]()
+    var slist: List[UInt8] = List[UInt8]()
     var s: String = ""
     slist.resize(BUFLEN + 1, 0)
     slist[BUFHALF] = ord(".")
@@ -39,8 +33,9 @@ fn main() raises:
             # }
         # }
         s = String(slist)
-        num = toFloat64(s)
+        num = Float64(s)
     # }
 
     print("Random numbers parsed: ", n, " str: ", s, "num: ", num)
     print("Time: ", (time.now() - start) // 1000000, " ms")
+# }
