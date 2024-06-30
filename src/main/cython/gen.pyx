@@ -27,18 +27,19 @@ def main():
         raise MemoryError("Failed to allocate memory")
         
     slist[8] = ord('.')
-    #printf("in main address: %p\n", <void*>slist)
     
     cdef double num = 0.0
     cdef int n = 10000000
     cdef int seed = 1
-    for _ in range(n):
-        seed = gen(seed, slist)
-        s = slist[:17].decode('utf-8')
-        num = float (s)
-
-    free (slist)
-    print(f"Random numbers parsed: {n} str: {s} num: {num}")
-    duration = int((time.time_ns()-start)/1000000)
-    print(f"Time: {duration} ms")
-
+    try:
+        for _ in range(n):
+            seed = gen(seed, slist)
+            s = slist[:17].decode('utf-8')
+            num = float(s)
+    except RuntimeError as e:
+        print(f"An error occurred: {e}")
+    finally:
+        free(slist)
+        print(f"Random numbers parsed: {n} str: {s} num: {num}")
+        duration = int((time.time_ns()-start)/1000000)
+        print(f"Time: {duration} ms")
