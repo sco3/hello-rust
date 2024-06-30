@@ -10,7 +10,7 @@ def gen(int seed , char *slist):
     for j in range(17):
         if j != 8:
             seed = (((seed + 7) << 4) // 11) & 0xFFFFFF
-            slist[j] = 0x30 + (seed % 10)
+            #slist[j] = 0x30 + (seed % 10)
     return seed
 
 
