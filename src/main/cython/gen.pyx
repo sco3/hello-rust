@@ -15,9 +15,9 @@ cdef gen(int seed , char *slist):
             slist[j] = 0x30 + (seed % 10)
         else:
             slist[j] = ord('.')
-            
-    printf("Pointer address: %p\n", <void*>slist)
-    print ("in gen: ", slist[:17].decode())
+
+    #printf("in gen  address: %p\n", <void*>slist)
+    #print ("in gen: ", slist[:17].decode())
     return seed
 
 
@@ -27,19 +27,21 @@ def main():
     """
 
     start = time.time_ns()
-    cdef double num = 0.0
     cdef char *slist = <char *>malloc(18)
+
+    cdef double num = 0.0
     slist[17] = 0
     cdef int n = 10 # 10000000
     cdef int seed = 1
     for _ in range(n):
         seed = gen(seed, slist)
-        printf("Pointer address: %p\n", <void*>slist)
-        #s = slist[:17].decode('utf-8')
-        #print (f"in main: {s}")
-        #num = float (s)
+        #printf("in main address: %p\n", <void*>slist)
+        s = slist[:17].decode('utf-8')
+        #print (f"in main as str: {s}")
+        num = float (s)
 
-    print(f"Random numbers parsed: {n} str: {slist} num: {num}")
+    free (slist)
+    print(f"Random numbers parsed: {n} str: {s} num: {num}")
     duration = int((time.time_ns()-start)/1000000)
     print(f"Time: {duration} ms")
 
