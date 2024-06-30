@@ -1,4 +1,4 @@
-   13th Gen Intel(R) Core(TM) i7-1360P
+   Intel(R) Core(TM) i5-6300U CPU @ 2.40GHz
 ===
 
 C:
@@ -8,20 +8,20 @@ C:
 + gcc -O3 src/main.c -o target/main
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 669 ms
+Time: 2143 ms
 
 Fast double parser function:
 
 + g++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 269 ms
+Time: 569 ms
 
 
 + clang++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp-clang
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 377 ms
+Time: 758 ms
 
 
 ~~~
@@ -30,13 +30,13 @@ Dart:
 ---
 
 ~~~
-Dart SDK version: 3.4.1 (stable) (Tue May 21 15:46:25 2024 +0000) on "linux_x64"
+Dart SDK version: 3.4.3 (stable) (Tue Jun 4 19:51:39 2024 +0000) on "linux_x64"
 
 + dart compile exe -o target/maindart src/main.dart
 Generated: /home/dz/prj/hello_rust/target/maindart
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2604 ms
+Time: 9188 ms
 
 
 ~~~
@@ -50,14 +50,14 @@ go version go1.21.10 linux/amd64
 + go build -o target/maingo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 774 ms
+Time: 1819 ms
 
 Unsafe:
 
 + go build -o target/main-unsafe-go src/main-unsafe.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 685 ms
+Time: 1741 ms
 
 
 Gccgo:
@@ -65,7 +65,7 @@ Gccgo:
 + gccgo -O3 -o target/maingccgo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 958 ms
+Time: 2891 ms
 
 
 Tinygo:
@@ -73,16 +73,21 @@ Tinygo:
 + tinygo build -o target/main-tiny -opt=2 src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 969 ms
+Time: 2501 ms
 
 Unsafe:
 
 + tinygo build -o target/main-unsafe-tiny -opt=2 src/main-unsafe.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 508 ms
+Time: 1375 ms
 
 
+Gop:
++ gop build -o target/main-gop src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1807 ms
 
 ~~~
 
@@ -90,13 +95,13 @@ Java:
 ---
 
 ~~~
-OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30, mixed mode, sharing)
+Java HotSpot(TM) 64-Bit Server VM (build 21.0.3+7-LTS-152, mixed mode, sharing)
 
 + /home/dz/prg/java-21o/bin/javac -d target src/main/java/Main.java
 
-OpenJDK 64-Bit Server VM Main
+Java HotSpot(TM) 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1118 ms
+Time: 3296 ms
 
 
 + /home/dz/prg/graalvm/bin/javac -d target src/main/java/Main.java
@@ -105,7 +110,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1143 ms
+Time: 2941 ms
 
 
 Fast double parser:
@@ -116,7 +121,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 497 ms
+Time: 1327 ms
 
 
 
@@ -124,7 +129,7 @@ Time: 497 ms
 
 Substrate VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2400 ms
+Time: 6437 ms
 
 
 Fast double parser (native java executable):
@@ -134,7 +139,7 @@ Fast double parser (native java executable):
 
 Substrate VM MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 484 ms
+Time: 1343 ms
 
 ~~~
 
@@ -145,7 +150,7 @@ JavaScript
 + node src/main.js
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2141 ms
+Time: 5971 ms
 ~~~
 
 Julia
@@ -154,28 +159,28 @@ Julia
 ~~~
 + julia -O 3 src/main.jl
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3338 ms
+Time: 10252 ms
 ~~~
 
 Mojo:
 ---
 
 ~~~
-+ mojo build src/main.mojo -o target/main-mojo
++ mojo build src/main/mojo/main.mojo -o target/main-mojo
 mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-mojo
-Random numbers parsed:  10000000  str:  46706439.74837267 num:  46706439.748372667
-Time:  1165  ms
+Random numbers parsed:  10000000  str:  46706439.74837267 num:  1.0
+Time:  1521  ms
 
 Unsafe:
 
-+ mojo build src/main-u.mojo -o target/main-u-mojo
++ mojo build src/main/mojo/main-u.mojo -o target/main-u-mojo
 mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-u-mojo
-Random numbers parsed:  10000000  str:  46706439.74837267 num:  46706439.748372667
-Time:  667  ms
+Random numbers parsed:  10000000  str:  46706439.74837267 num:  1.0
+Time:  1005  ms
 ~~~
 
 Free Pascal:
@@ -185,7 +190,7 @@ Free Pascal:
 + fpc -O3 -otarget/mainpas src/main.pas
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1753
+Time: 5160
 
 ~~~
 
@@ -196,7 +201,7 @@ Python
 + python src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 18386 ms
+Time: 59663 ms
 ~~~
 
 Graalpy
@@ -204,11 +209,9 @@ Graalpy
 
 ~~~
 + /home/dz/prg/graalpy/bin/python3 --version
-GraalPy 3.10.13 (GraalVM CE Native 24.0.1)
+bash: line 1: /home/dz/prg/graalpy/bin/python3: No such file or directory
 + /home/dz/prg/graalpy/bin/python3 src/main.py
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 5638 ms
+bash: line 1: /home/dz/prg/graalpy/bin/python3: No such file or directory
 ~~~
 
 Jython
@@ -218,7 +221,17 @@ Jython
 + java -jar lib/jython-standalone-2.7.3.jar src/main.jpy
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 26815 ms
+Time: 65094 ms
+~~~
+
+PyPy
+---
+
+~~~
++ pypy src/main.jpy
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 6915 ms
 ~~~
 
 Rust:
@@ -229,7 +242,7 @@ Rust:
 + cargo build --release
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
-Time: 421 ms
+Time: 809 ms
 ~~~
 
 V Lang:
@@ -238,15 +251,15 @@ V Lang:
 ~~~
 Unsafe: (byte array with tos() to string conversion)
 
-+ v -prod src/main.v -o target/vmain
++ v -prod src/main/v/main.v -o target/vmain
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 302 ms
+Time: 702 ms
 
 With strings.Builder
 
-+ v -prod -autofree src/main-builder.v -o target/vmain
++ v -prod -autofree src/main/v/main-builder.v -o target/vmainb
 
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 596 ms
+Random numbers parsed: 10000000 str: 4670643974837267 num: 4670643974837267.00000000
+Time: 1617 ms
 ~~~

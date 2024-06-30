@@ -12,3 +12,4 @@ bin
 **/main.o
 **/.*
 /build/
+gop_autogen.go
