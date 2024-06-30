@@ -13,13 +13,7 @@ cdef gen(int seed , char *slist):
         if j != 8:
             seed = (((seed + 7) << 4) // 11) & 0xFFFFFF
             slist[j] = 0x30 + (seed % 10)
-        else:
-            slist[j] = ord('.')
-
-    #printf("in gen  address: %p\n", <void*>slist)
-    #print ("in gen: ", slist[:17].decode())
     return seed
-
 
 def main():
     """
@@ -27,17 +21,20 @@ def main():
     """
 
     start = time.time_ns()
-    cdef char *slist = <char *>malloc(18)
-
+    cdef char *slist = <char *>malloc(17)
+    
+    if not slist:
+        raise MemoryError("Failed to allocate memory")
+        
+    slist[8] = ord('.')
+    #printf("in main address: %p\n", <void*>slist)
+    
     cdef double num = 0.0
-    slist[17] = 0
-    cdef int n = 10 # 10000000
+    cdef int n = 10000000
     cdef int seed = 1
     for _ in range(n):
         seed = gen(seed, slist)
-        #printf("in main address: %p\n", <void*>slist)
         s = slist[:17].decode('utf-8')
-        #print (f"in main as str: {s}")
         num = float (s)
 
     free (slist)
