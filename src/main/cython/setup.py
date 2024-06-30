@@ -7,7 +7,7 @@ from Cython.Build import cythonize
 
 extensions = [
     Extension(
-        "gen", ["gen.py"],
+        "gen", ["gen.pyx"],
         extra_compile_args=['-O3']
     )  
 ]
