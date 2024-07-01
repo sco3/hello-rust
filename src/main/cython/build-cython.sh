@@ -1,4 +1,4 @@
-
+#!/usr/bin/env -S bash -x 
 # pip install cython 
 
 
@@ -7,9 +7,9 @@ rm -f *.so
 
 #export CC=clang
 
-python setup.py build_ext --inplace
+python3.12 setup.py build_ext --inplace
 
 #--verbose
 
 
- python main.py
+python3.12 main.py

@@ -3,7 +3,7 @@
 
 source ./cpu-governor.sh
 
-cat >> README.md <<-EOF
+cat >> README$(./cpu.sh).md <<-EOF
 
 Java:
 ---
