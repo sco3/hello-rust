@@ -183,7 +183,7 @@ Random numbers parsed:  10000000  str:  46706439.74837267 num:  1.0
 Time:  588  ms
 ~~~
 
-C:
+Nim:
 ---
 
 ~~~
