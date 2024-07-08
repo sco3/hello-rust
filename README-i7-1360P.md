@@ -8,20 +8,20 @@ C:
 + gcc -O3 src/main.c -o target/main
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 667 ms
+Time: 677 ms
 
 Fast double parser function:
 
 + g++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 263 ms
+Time: 264 ms
 
 
 + clang++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp-clang
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 374 ms
+Time: 377 ms
 
 
 ~~~
@@ -36,7 +36,7 @@ Dart SDK version: 3.4.1 (stable) (Tue May 21 15:46:25 2024 +0000) on "linux_x64"
 Generated: /home/dz/prj/hello_rust/target/maindart
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2687 ms
+Time: 2852 ms
 
 
 ~~~
@@ -50,14 +50,14 @@ go version go1.21.10 linux/amd64
 + go build -o target/maingo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 794 ms
+Time: 783 ms
 
 Unsafe:
 
 + go build -o target/main-unsafe-go src/main-unsafe.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 682 ms
+Time: 685 ms
 
 
 Gccgo:
@@ -65,7 +65,7 @@ Gccgo:
 + gccgo -O3 -o target/maingccgo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1003 ms
+Time: 1004 ms
 
 
 Tinygo:
@@ -73,21 +73,21 @@ Tinygo:
 + tinygo build -o target/main-tiny -opt=2 src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1011 ms
+Time: 971 ms
 
 Unsafe:
 
 + tinygo build -o target/main-unsafe-tiny -opt=2 src/main-unsafe.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 508 ms
+Time: 511 ms
 
 
 Gop:
 + gop build -o target/main-gop src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 830 ms
+Time: 769 ms
 
 ~~~
 
@@ -101,7 +101,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1064 ms
+Time: 1072 ms
 
 
 + /home/dz/prg/graalvm/bin/javac -d target src/main/java/Main.java
@@ -110,7 +110,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1123 ms
+Time: 1059 ms
 
 
 Fast double parser:
@@ -121,7 +121,7 @@ OpenJDK 64-Bit Server VM GraalVM CE 21.0.2+13.1 (build 21.0.2+13-jvmci-23.1-b30,
 
 OpenJDK 64-Bit Server VM MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 497 ms
+Time: 469 ms
 
 
 
@@ -129,7 +129,7 @@ Time: 497 ms
 
 Substrate VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2383 ms
+Time: 2233 ms
 
 
 Fast double parser (native java executable):
@@ -139,7 +139,7 @@ Fast double parser (native java executable):
 
 Substrate VM MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 501 ms
+Time: 503 ms
 
 ~~~
 
@@ -150,7 +150,7 @@ JavaScript
 + node src/main.js
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2122 ms
+Time: 2146 ms
 ~~~
 
 Julia
@@ -159,7 +159,7 @@ Julia
 ~~~
 + julia -O 3 src/main.jl
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3778 ms
+Time: 3380 ms
 ~~~
 
 Mojo:
@@ -171,7 +171,7 @@ mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-mojo
 Random numbers parsed:  10000000  str:  46706439.74837267 num:  1.0
-Time:  666  ms
+Time:  664  ms
 
 Unsafe:
 
@@ -180,7 +180,19 @@ mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
 
 + target/main-u-mojo
 Random numbers parsed:  10000000  str:  46706439.74837267 num:  1.0
-Time:  599  ms
+Time:  588  ms
+~~~
+
+C:
+---
+
+~~~
++ nim c -o:target/main-nim -d:release --verbosity:0 src/main/nim/main.nim
+
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 490 ms
+
 ~~~
 
 Free Pascal:
@@ -190,7 +202,7 @@ Free Pascal:
 + fpc -O3 -otarget/mainpas src/main.pas
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1754
+Time: 1795
 
 ~~~
 
@@ -201,7 +213,7 @@ Python
 + python src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 15937 ms
+Time: 15666 ms
 ~~~
 
 Cython
@@ -210,11 +222,20 @@ Cython
 ~~~
 + cd src/main/cython
 + python3.12 setup.py build_ext --inplace --verbose
+Compiling gen.pyx because it changed.
+[1/1] Cythonizing gen.pyx
 running build_ext
+building 'gen' extension
+creating build/temp.linux-x86_64-cpython-312
+creating build/temp.linux-x86_64-cpython-312/build
+gcc -fno-strict-overflow -Wsign-compare -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DNDEBUG -fcf-protection -fexceptions -fcf-protection -fexceptions -fcf-protection -fexceptions -fPIC -I/usr/include/python3.12 -c build/gen.c -o build/temp.linux-x86_64-cpython-312/build/gen.o -O3
+creating build/lib.linux-x86_64-cpython-312
+gcc -shared build/temp.linux-x86_64-cpython-312/build/gen.o -L/usr/lib64 -o build/lib.linux-x86_64-cpython-312/gen.cpython-312-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-cpython-312/gen.cpython-312-x86_64-linux-gnu.so -> 
 + python3.12 main.py
 gen.cpython-312-x86_64-linux-gnu.so
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1486 ms
+Time: 3330 ms
 ~~~
 
 Graalpy
@@ -226,7 +247,7 @@ GraalPy 3.10.13 (GraalVM CE Native 24.0.1)
 + /home/dz/prg/graalpy/bin/python3 src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 5509 ms
+Time: 6255 ms
 ~~~
 
 Jython
@@ -236,7 +257,7 @@ Jython
 + java -jar lib/jython-standalone-2.7.3.jar src/main.jpy
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 27052 ms
+Time: 26434 ms
 ~~~
 
 PyPy
@@ -246,7 +267,7 @@ PyPy
 + pypy src/main.jpy
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2953 ms
+Time: 2115 ms
 ~~~
 
 Rust:
@@ -257,7 +278,7 @@ Rust:
 + cargo build --release
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
-Time: 422 ms
+Time: 397 ms
 ~~~
 
 V Lang:
@@ -269,12 +290,12 @@ Unsafe: (byte array with tos() to string conversion)
 + v -prod src/main/v/main.v -o target/vmain
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 363 ms
+Time: 340 ms
 
 With strings.Builder
 
 + v -prod -autofree src/main/v/main-builder.v -o target/vmainb
 
 Random numbers parsed: 10000000 str: 4670643974837267 num: 4670643974837267.00000000
-Time: 585 ms
+Time: 573 ms
 ~~~

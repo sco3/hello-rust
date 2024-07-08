@@ -4,6 +4,8 @@ import time
 from libc.stdlib cimport malloc, free
 from libc.stdio cimport printf
 
+ZERO=ord('0')
+
 cdef gen(int seed , char *slist):
     """
     Generates pseudo random number
@@ -12,7 +14,7 @@ cdef gen(int seed , char *slist):
     for j in range(17):
         if j != 8:
             seed = (((seed + 7) << 4) // 11) & 0xFFFFFF
-            slist[j] = 0x30 + (seed % 10)
+            slist[j] = ZERO + (seed % 10)
     return seed
 
 def main():
