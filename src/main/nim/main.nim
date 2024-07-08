@@ -4,7 +4,6 @@
 # Author: Sco3
 
 import times
-#import sequtils
 import std/parseutils
 
 proc gen(aseed: int, slist: var string): int =
