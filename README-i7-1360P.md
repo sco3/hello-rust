@@ -216,6 +216,24 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 15666 ms
 ~~~
 
+
+Python mypyc
+---
+
+~~~
++ cd src/main/mypyc
++ mypyc main.py
+running build_ext
+copying build/lib.linux-x86_64-cpython-311/main.cpython-311-x86_64-linux-gnu.so -> 
++ cd src/main/mypyc
++ python -c 'import main;'
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 6453 ms
+~~~
+
+
+
 Cython
 ---
 
@@ -299,3 +317,4 @@ With strings.Builder
 Random numbers parsed: 10000000 str: 4670643974837267 num: 4670643974837267.00000000
 Time: 573 ms
 ~~~
+

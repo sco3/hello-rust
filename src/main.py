@@ -19,7 +19,7 @@ def gen(seed: int, slist: list[str]) -> int:
     return seed
 
 
-def main():
+def main() -> None:
     """
     Method to measure execution time
     """
@@ -34,7 +34,6 @@ def main():
         num = float(s)
     print("")
     print(f"Random numbers parsed: {n} str: {s} num: {num:17.8f}")
-
 
 t = int(timeit.timeit(main, number=1) * 1000)
 print(f"Time: {t} ms")

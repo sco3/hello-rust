@@ -13,3 +13,4 @@ bin
 **/.*
 /build/
 gop_autogen.go
+src/__pycache__/
