@@ -1,7 +1,10 @@
 plugins {
     id "java"
     id "application"
+    id 'eclipse'
+    id "com.github.spotbugs" version "6.0.20"
 }
+
 
 group = "sco3"
 version = "1.0.0-SNAPSHOT"
@@ -15,12 +18,15 @@ repositories {
     flatDir {
         dirs "lib"
     }
+    mavenCentral()
+    jcenter()
 }
 
 dependencies {
     testImplementation "junit:junit:4.13.2"
     implementation files("lib/reader-1.0.0-SNAPSHOT.jar")
     implementation files("lib/fastdoubleparser-java21-1.0.0.jar")
+    spotbugs("com.github.spotbugs:spotbugs:4.8.6")
 }
 
 
@@ -31,3 +37,4 @@ application {
         mainClass = 'sco3.Main'
     }
 }
+

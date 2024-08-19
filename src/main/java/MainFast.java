@@ -6,7 +6,9 @@ import static java.lang.System.getProperty;
 import static java.lang.System.out;
 
 public class MainFast {
-	public static void main(String[] argv) {
+	private static final String LATIN_1 = "Latin-1";
+
+	public static void main(String[] argv) throws Exception {
 		byte zero = (byte) '0';
 		long begin = currentTimeMillis();
 		out.println("" //
@@ -19,7 +21,7 @@ public class MainFast {
 			n = parseInt(argv[0]);
 		}
 		double num = 0;
-		byte[] str = "00000000.00000000".getBytes();
+		byte[] str = "00000000.00000000".getBytes(LATIN_1);
 
 		int seed = 1;
 		for (int i = 0; i < n; i++) {
@@ -32,7 +34,8 @@ public class MainFast {
 			}
 			num = parseDouble(str);
 		}
-		out.println(format("Random numbers parsed: %d str: %s num: %17.8f", n, new String(str), num));
+		String nstr = new String(str, LATIN_1);
+		out.println(format("Random numbers parsed: %d str: %s num: %17.8f", n, nstr, num));
 		out.println(format("Time: %d ms", currentTimeMillis() - begin));
 	}
 }
