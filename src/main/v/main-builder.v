@@ -20,6 +20,8 @@ fn main() {
 			if j != 8 {
 				seed = (((seed + 7) << 4) / 11) & 0xffffff
 				sb.write_byte(u8(`0` + (seed % 10)))
+			} else {
+				sb.write_byte(u8(`.`))
 			}
 		}
 		sstr = sb.str()
