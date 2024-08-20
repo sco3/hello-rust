@@ -318,3 +318,15 @@ Random numbers parsed: 10000000 str: 4670643974837267 num: 4670643974837267.0000
 Time: 573 ms
 ~~~
 
+
+Zig:
+---
+
+~~~
+
++ cd target
++ zig build-exe -O ReleaseFast ../src/mainzig.zig
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 4.670643974837267e7
+Time: 287 ms
+~~~
