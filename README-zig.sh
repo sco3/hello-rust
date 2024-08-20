@@ -4,7 +4,7 @@ source ./cpu-governor.sh
 
 mkdir -p target
 
-cat >> README$(./cpu.sh).md <<-EOF
+cat >> "README$(./cpu.sh).md" <<-EOF
 
 Zig:
 ---
