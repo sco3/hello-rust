@@ -2,7 +2,21 @@ import time
 
 import cython
 
-from cython.cimports.libc.stdlib import malloc, free
+
+if cython.compiled:
+    from cython.cimports.libc.stdlib import malloc, free
+    from cython.cimports.libc.string import strcpy
+    from cython import cast
+else:
+    from ctypes import CDLL, c_char_p, c_void_p, c_size_t, cast
+
+    libc = CDLL("libc.so.6")
+
+    def malloc(size: int) -> c_void_p:
+        return libc.malloc(size)
+
+    def free(ptr: c_void_p) -> None:
+        libc.free(ptr)
 
 ZERO: cython.int = ord("0")
 
@@ -25,7 +39,7 @@ def main():
     """
 
     start = time.time_ns()
-    slist: cython.p_char = cython.cast(cython.p_char, malloc(17))
+    slist: cython.p_char = cast(cython.p_char, malloc(17))
 
     if not slist:
         raise MemoryError("Failed to allocate memory")
