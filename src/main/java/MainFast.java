@@ -6,7 +6,7 @@ import static java.lang.System.getProperty;
 import static java.lang.System.out;
 
 public class MainFast {
-	private static final String LATIN_1 = "Latin-1";
+	private static final String LATIN_1 = "ISO-8859-1";
 
 	public static void main(String[] argv) throws Exception {
 		byte zero = (byte) '0';
