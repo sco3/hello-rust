@@ -11,3 +11,19 @@ rand = "0.7.3"
 
 [profile.dev]
 opt-level = 3
+
+[[bin]]
+name="main-replace"
+path = "src/main-replace.rs"
+
+[[bin]]
+name="main-unsafe-rs"
+path = "src/main-unsafe.rs"
+
+[[bin]]
+name="main-rust"
+path = "src/main.rs"
+
+[[bin]]
+name="lifetime"
+path = "src/lifetime.rs"
