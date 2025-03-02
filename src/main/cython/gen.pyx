@@ -42,6 +42,7 @@ def main():
         print(f"An error occurred: {e}")
     finally:
         free(slist)
+        print("")
         print(f"Random numbers parsed: {n} str: {s} num: {num}")
         duration = int((time.time_ns()-start)/1000000)
         print(f"Time: {duration} ms")

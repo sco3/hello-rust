@@ -278,24 +278,6 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 14104 ms
 ~~~
 
-Cython
----
-
-~~~
-+ cd src/main/cython
-+ uv run python3 setup.py build_ext --inplace --verbose
-Compiling gen.pyx because it changed.
-[1/1] Cythonizing gen.pyx
-running build_ext
-building 'gen' extension
-gcc -fno-strict-overflow -Wsign-compare -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DNDEBUG -fexceptions -fcf-protection -fexceptions -fcf-protection -fexceptions -fcf-protection -fPIC -I/home/dz/prj/hello_rust/src/main/cython/.venv/include -I/usr/include/python3.12 -c build/gen.c -o build/temp.linux-x86_64-cpython-312/build/gen.o -O3
-gcc -shared build/temp.linux-x86_64-cpython-312/build/gen.o -L/usr/lib64 -o build/lib.linux-x86_64-cpython-312/gen.cpython-312-x86_64-linux-gnu.so
-copying build/lib.linux-x86_64-cpython-312/gen.cpython-312-x86_64-linux-gnu.so -> 
-+ uv run python3 main.py
-gen.cpython-312-x86_64-linux-gnu.so
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 10137 ms
-~~~
 
 Cython
 ---
@@ -309,6 +291,7 @@ copying build/lib.linux-x86_64-cpython-312/gen.cpython-312-x86_64-linux-gnu.so -
 
 + uv run python3 main.py
 gen.cpython-312-x86_64-linux-gnu.so
+
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 10079 ms
+Time: 9841 ms
 ~~~
