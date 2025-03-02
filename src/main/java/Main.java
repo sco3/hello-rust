@@ -9,7 +9,7 @@ public class Main {
 		if (version == null) {
 			version = getProperty("java.vm.name");
 		}
-		out.println(format("%s %s", version, MainFast.class.getSimpleName()));
+		out.println(format("%s %s", version, Main.class.getSimpleName()));
 		byte zero = (byte) '0';
 		long begin = currentTimeMillis();
 
