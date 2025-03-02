@@ -249,22 +249,6 @@ Time: 5632
 
 ~~~
 
-Cython
----
-
-~~~
-+ cd src/main/cython
-+ python3.12 setup.py build_ext --inplace --verbose
-Traceback (most recent call last):
-  File "/home/dz/prj/hello_rust/src/main/cython/setup.py", line 1, in <module>
-    from setuptools import setup
-ModuleNotFoundError: No module named 'setuptools'
-+ python3.12 main.py
-Traceback (most recent call last):
-  File "/home/dz/prj/hello_rust/src/main/cython/main.py", line 3, in <module>
-    import gen
-ModuleNotFoundError: No module named 'gen'
-~~~
 
 Graalpy
 ---
@@ -294,4 +278,89 @@ gen.cpython-312-x86_64-linux-gnu.so
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 9841 ms
+~~~
+
+PyPy
+---
+
+~~~
++ pypy src/main.jpy
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 6454 ms
+~~~
+
+
+Python mypyc
+---
+
+~~~
++ cd src/main/mypyc
++ uv run mypyc main.py
+running build_ext
+building 'main' extension
+creating build/temp.linux-x86_64-cpython-313/build
+gcc -fno-strict-overflow -Wsign-compare -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DNDEBUG -fcf-protection -fexceptions -fcf-protection -fexceptions -fcf-protection -fexceptions -O3 -fPIC -I/home/dz/prj/hello_rust/src/main/mypyc/.venv/lib64/python3.13/site-packages/mypyc/lib-rt -I/home/dz/prj/hello_rust/src/main/mypyc/.venv/include -I/usr/include/python3.13 -c build/__native.c -o build/temp.linux-x86_64-cpython-313/build/__native.o -O3 -g1 -Werror -Wno-unused-function -Wno-unused-label -Wno-unreachable-code -Wno-unused-variable -Wno-unused-command-line-argument -Wno-unknown-warning-option -Wno-unused-but-set-variable -Wno-ignored-optimization-argument -Wno-cpp
+creating build/lib.linux-x86_64-cpython-313
+gcc -shared build/temp.linux-x86_64-cpython-313/build/__native.o -L/usr/lib64 -o build/lib.linux-x86_64-cpython-313/main.cpython-313-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-cpython-313/main.cpython-313-x86_64-linux-gnu.so -> 
++ cd src/main/mypyc
++ uv run python -c 'import main;'
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 16827 ms
+~~~
+
+Python mypyc
+---
+
+~~~
++ cd src/main/mypyc
++ uv run mypyc main.py
+running build_ext
+building 'main' extension
+creating build/temp.linux-x86_64-cpython-312/build
+gcc -fno-strict-overflow -Wsign-compare -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DNDEBUG -fexceptions -fcf-protection -fexceptions -fcf-protection -fexceptions -fcf-protection -fPIC -I/home/dz/prj/hello_rust/src/main/mypyc/.venv/lib64/python3.12/site-packages/mypyc/lib-rt -I/home/dz/prj/hello_rust/src/main/mypyc/.venv/include -I/usr/include/python3.12 -c build/__native.c -o build/temp.linux-x86_64-cpython-312/build/__native.o -O3 -g1 -Werror -Wno-unused-function -Wno-unused-label -Wno-unreachable-code -Wno-unused-variable -Wno-unused-command-line-argument -Wno-unknown-warning-option -Wno-unused-but-set-variable -Wno-ignored-optimization-argument -Wno-cpp
+creating build/lib.linux-x86_64-cpython-312
+gcc -shared build/temp.linux-x86_64-cpython-312/build/__native.o -L/usr/lib64 -o build/lib.linux-x86_64-cpython-312/main.cpython-312-x86_64-linux-gnu.so
+copying build/lib.linux-x86_64-cpython-312/main.cpython-312-x86_64-linux-gnu.so -> 
++ cd src/main/mypyc
++ uv run python -c 'import main;'
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 19012 ms
+~~~
+
+Jython
+---
+
+~~~
++ java -jar lib/jython-standalone-2.7.3.jar src/main.jpy
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 53085 ms
+~~~
+
+JavaScript
+---
+
+~~~
++ node src/main.js
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 5366 ms
+~~~
+
+Jython
+---
+
+~~~
++ java -version
+java version "23.0.2" 2025-01-21
+Java(TM) SE Runtime Environment Oracle GraalVM 23.0.2+7.1 (build 23.0.2+7-jvmci-b01)
+Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 23.0.2+7.1 (build 23.0.2+7-jvmci-b01, mixed mode, sharing)
++ java -jar lib/jython-standalone-2.7.3.jar src/main.jpy
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 52966 ms
 ~~~

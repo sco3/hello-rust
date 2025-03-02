@@ -8,7 +8,7 @@ Python mypyc
 ---
 
 ~~~
-$(bash -x -c 'cd src/main/mypyc; mypyc main.py' 2>&1)
-$(bash -x -c 'cd src/main/mypyc; python -c "import main;"' 2>&1)
+$(bash -x -c 'cd src/main/mypyc; uv run mypyc main.py' 2>&1)
+$(bash -x -c 'cd src/main/mypyc; uv run python -c "import main;"' 2>&1)
 ~~~
 EOF
