@@ -30,7 +30,7 @@ pub fn main() !void {
         );
     }
     try stdout.print( //
-        "Random numbers parsed: {} str: {s} num: {}\n", //
+        "Random numbers parsed: {} str: {s} num: {d:17.8}\n", //
         .{ n, str, num } //
     );
 

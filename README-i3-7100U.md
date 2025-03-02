@@ -149,17 +149,6 @@ Time: 1962 ms
 
 ~~~
 
-Zig:
----
-
-~~~
-
-+ cd target
-+ zig build-exe -O ReleaseFast ../src/mainzig.zig
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 4.670643974837267e7
-Time: 667 ms
-~~~
 
 Nim:
 ---
@@ -171,4 +160,17 @@ Nim:
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 1323 ms
+~~~
+
+
+Zig:
+---
+
+~~~
+
++ cd target
++ zig build-exe -O ReleaseFast ../src/mainzig.zig
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 671 ms
 ~~~
