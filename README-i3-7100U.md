@@ -97,59 +97,6 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 52684 ms
 ~~~
 
-Go:
----
-
-~~~
-go version go1.21.10 linux/amd64
-
-+ go build -o target/maingo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2034 ms
-
-Unsafe:
-
-+ go build -o target/main-unsafe-go src/main-unsafe.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1967 ms
-
-
-Gccgo:
-
-+ gccgo -O3 -o target/maingccgo src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2476 ms
-
-
-Tinygo:
-
-+ tinygo build -o target/main-tiny -opt=2 src/main.go
-error: failed to build /usr/lib64/tinygo/src/runtime/asm_amd64.S: none of these commands were found in your $PATH: clang-17
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2539 ms
-
-Unsafe:
-
-+ tinygo build -o target/main-unsafe-tiny -opt=2 src/main-unsafe.go
-error: failed to build /usr/lib64/tinygo/src/runtime/asm_amd64.S: none of these commands were found in your $PATH: clang-17
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1423 ms
-
-
-Gop:
-+ gop build -o target/main-gop src/main.go
-
-Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1962 ms
-
-~~~
-
-
 Nim:
 ---
 
@@ -173,4 +120,55 @@ Zig:
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 671 ms
+~~~
+
+
+Go:
+---
+
+~~~
+go version go1.21.10 linux/amd64
+
++ go build -o target/maingo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1959 ms
+
+Unsafe:
+
++ go build -o target/main-unsafe-go src/main-unsafe.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1915 ms
+
+
+Gccgo:
+
++ gccgo -O3 -o target/maingccgo src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 2517 ms
+
+
+Tinygo:
+
++ tinygo build -o target/main-tiny -opt=2 src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 2310 ms
+
+Unsafe:
+
++ tinygo build -o target/main-unsafe-tiny -opt=2 src/main-unsafe.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1214 ms
+
+
+Gop:
++ gop build -o target/main-gop src/main.go
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 2025 ms
+
 ~~~
