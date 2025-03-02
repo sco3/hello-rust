@@ -9,11 +9,11 @@ Java:
 ---
 
 ~~~
-$(~/prg/java-21o/bin/java -version 2>&1| tail -n 1)
+$(~/prg/java-23o/bin/java -version 2>&1| tail -n 1)
 
 $(bash -x -c '~/prg/java-21o/bin/javac -d target src/main/java/Main.java ' 2>&1)
 
-$(~/prg/java-21o/bin/java -cp target Main)
+$(~/prg/java-23o/bin/java -cp target Main)
 
 
 $(bash -x -c '~/prg/graalvm/bin/javac -d target src/main/java/Main.java ' 2>&1)

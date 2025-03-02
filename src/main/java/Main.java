@@ -5,12 +5,13 @@ import static java.lang.System.out;
 
 public class Main {
 	public static void main(String[] argv) {
-
-		long begin = System.currentTimeMillis();
-		out.println("" //
-				+ getProperty("java.vm.name") //
-				+ " " + Main.class.getSimpleName() //
-		);
+		String version = getProperty("java.vendor.version");
+		if (version == null) {
+			version = getProperty("java.vm.name");
+		}
+		out.println(format("%s %s", version, MainFast.class.getSimpleName()));
+		byte zero = (byte) '0';
+		long begin = currentTimeMillis();
 
 		int n = 10000000;
 		if (argv.length > 0) {
@@ -27,7 +28,7 @@ public class Main {
 					str.append('.');
 				} else {
 					seed = (((seed + 7) << 4) / 11) & 0xffffff;
-					char c = (char) (((byte) '0') + seed % 10);
+					char c = (char) (zero + seed % 10);
 					str.append(c);
 				}
 			}

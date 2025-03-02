@@ -9,12 +9,13 @@ public class MainFast {
 	private static final String LATIN_1 = "ISO-8859-1";
 
 	public static void main(String[] argv) throws Exception {
+		String version = getProperty("java.vendor.version");
+		if (version == null) {
+			version = getProperty("java.vm.name");
+		}
+		out.println(format("%s %s", version, MainFast.class.getSimpleName()));
 		byte zero = (byte) '0';
 		long begin = currentTimeMillis();
-		out.println("" //
-				+ getProperty("java.vm.name") //
-				+ " " + MainFast.class.getSimpleName() //
-		);
 
 		int n = 10000000;
 		if (argv.length > 0) {
