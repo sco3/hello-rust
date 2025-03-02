@@ -172,3 +172,24 @@ Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 2025 ms
 
 ~~~
+
+Mojo:
+---
+
+~~~
++ mojo build src/main/mojo/main.mojo -o target/main-mojo
+mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
+
++ target/main-mojo
+Random numbers parsed:  10000000  str:  46706439.74837267 num:  1.0
+Time:  1648  ms
+
+Unsafe:
+
++ mojo build src/main/mojo/main-u.mojo -o target/main-u-mojo
+mojo: /lib64/libtinfo.so.6: no version information available (required by mojo)
+
++ target/main-u-mojo
+Random numbers parsed:  10000000  str:  46706439.74837267 num:  1.0
+Time:  1155  ms
+~~~
