@@ -5,6 +5,7 @@
 
 import times
 import std/parseutils
+import std/strformat
 
 proc gen(aseed: int, slist: var string): int =
     var seed = aseed
@@ -24,7 +25,7 @@ proc main() =
         seed = gen(seed, slist)
         result = parseBiggestFloat(slist, num)
     echo ""
-    echo "Random numbers parsed: ", n, " str: ", slist, " num: ", $num
+    echo "Random numbers parsed: ", n, " str: ", slist, " num: ", fmt"{num:17.8f}"
 
 let t = cpuTime()
 main()
