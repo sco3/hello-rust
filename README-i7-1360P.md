@@ -330,3 +330,15 @@ Zig:
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 4.670643974837267e7
 Time: 287 ms
 ~~~
+
+Vala:
+---
+
+~~~
++ valac --pkg glib-2.0 --pkg posix -X -O3 -X -lm -o target/main-vala src/main.vala
+
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 1144 ms
+
+
+~~~
