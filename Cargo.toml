@@ -8,6 +8,7 @@ edition = "2018"
 
 [dependencies]
 rand = "0.7.3"
+wasm-bindgen = "0.2.100"
 
 [profile.dev]
 opt-level = 3
@@ -24,3 +25,6 @@ path = "src/main-unsafe.rs"
 name="main-rust"
 path = "src/main.rs"
 
+
+[lib]
+crate-type = ["cdylib", "rlib"]
