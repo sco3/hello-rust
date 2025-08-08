@@ -24,10 +24,3 @@ path = "src/main-unsafe.rs"
 name="main-rust"
 path = "src/main.rs"
 
-[[bin]]
-name="lifetime"
-path = "src/lifetime.rs"
-
-[[bin]]
-name="lifetime-minus"
-path = "src/lifetime-minus.rs"
