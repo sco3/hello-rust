@@ -8,20 +8,20 @@ C:
 + gcc -O3 src/main.c -o target/main
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 758 ms
+Time: 755 ms
 
 Fast double parser function:
 
 + g++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 306 ms
+Time: 293 ms
 
 
 + clang++ -O3 src/main-fast-dp.cpp -o target/main-fast-dp-clang
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 419 ms
+Time: 415 ms
 
 
 ~~~
@@ -36,7 +36,7 @@ Dart SDK version: 3.4.4 (stable) (Wed Jun 12 15:54:31 2024 +0000) on "linux_x64"
 Generated: /home/dz/prj/hello_rust/target/maindart
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3245 ms
+Time: 3185 ms
 
 
 ~~~
@@ -50,14 +50,14 @@ go version go1.24.2 linux/amd64
 + go build -o target/maingo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 833 ms
+Time: 829 ms
 
 Unsafe:
 
 + go build -o target/main-unsafe-go src/main-unsafe.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 735 ms
+Time: 731 ms
 
 
 Gccgo:
@@ -65,7 +65,7 @@ Gccgo:
 + gccgo -O3 -o target/maingccgo src/main.go
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 971 ms
+Time: 960 ms
 
 
 ~~~
@@ -80,7 +80,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.0.2+12-54, mixed mode, sharing)
 
 Java HotSpot(TM) 64-Bit Server VM Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1321 ms
+Time: 1287 ms
 
 
 + /home/dz/prg/graalvm/bin/javac -d target src/main/java/Main.java
@@ -89,7 +89,7 @@ Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 24.0.2+11.1 (build 24.0.2+11-jv
 
 Oracle GraalVM 24.0.2+11.1 Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1215 ms
+Time: 1136 ms
 
 
 Fast double parser:
@@ -100,7 +100,7 @@ Java HotSpot(TM) 64-Bit Server VM Oracle GraalVM 24.0.2+11.1 (build 24.0.2+11-jv
 
 Oracle GraalVM 24.0.2+11.1 MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 427 ms
+Time: 430 ms
 
 
 
@@ -108,7 +108,7 @@ Time: 427 ms
 
 Oracle GraalVM 24.0.2+11.1 Main
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1271 ms
+Time: 1240 ms
 
 
 Fast double parser (native java executable):
@@ -120,6 +120,16 @@ Oracle GraalVM 24.0.2+11.1 MainFast
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
 Time: 474 ms
 
+
+Java compiled to Wasm
+
++ /home/dz/prg/graalvm/bin/native-image --tool:svm-wasm Main -cp 'target:lib/*' target/java-wasm
+
+Oracle GraalVM 24.0.2+11.1 Main
+Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
+Time: 2889 ms
+
+
 ~~~
 
 JavaScript
@@ -129,7 +139,7 @@ JavaScript
 + node src/main.js
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1948 ms
+Time: 1999 ms
 ~~~
 
 Julia
@@ -138,7 +148,7 @@ Julia
 ~~~
 + julia -O 3 src/main.jl
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3551 ms
+Time: 3525 ms
 ~~~
 
 Nim:
@@ -150,7 +160,7 @@ Nim:
 
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 530 ms
+Time: 542 ms
 ~~~
 
 Free Pascal:
@@ -160,7 +170,7 @@ Free Pascal:
 + fpc -O3 -otarget/mainpas src/main.pas
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1876
+Time: 1883ms
 
 ~~~
 
@@ -171,7 +181,7 @@ Python
 + python src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 16927 ms
+Time: 16684 ms
 ~~~
 
 Cython
@@ -190,7 +200,7 @@ copying build/lib.linux-x86_64-cpython-312/gen.cpython-312-x86_64-linux-gnu.so -
 gen.cpython-312-x86_64-linux-gnu.so
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2846 ms
+Time: 2852 ms
 ~~~
 
 Graalpy
@@ -202,7 +212,7 @@ GraalPy 3.11.7 (Oracle GraalVM Native 24.2.2)
 + /home/dz/prg/graalpy/bin/python3 src/main.py
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 3772 ms
+Time: 3757 ms
 ~~~
 
 Jython
@@ -221,7 +231,7 @@ WARNING: Restricted methods will be blocked in a future release unless native ac
 
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 19411 ms
+Time: 19490 ms
 ~~~
 
 Python mypyc
@@ -238,7 +248,7 @@ copying build/lib.linux-x86_64-cpython-312/main.cpython-312-x86_64-linux-gnu.so 
 + uv run python -c 'import main;'
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 6726 ms
+Time: 6485 ms
 ~~~
 
 PyPy
@@ -248,7 +258,7 @@ PyPy
 + pypy src/main.jpy
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 2473 ms
+Time: 2573 ms
 ~~~
 
 Rust:
@@ -259,7 +269,7 @@ Rust:
 + cargo build --release
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267 
-Time: 319 ms
+Time: 324 ms
 ~~~
 
 Vala:
@@ -269,7 +279,7 @@ Vala:
 + valac --pkg glib-2.0 --pkg posix -X -O3 -X -lm -o target/main-vala src/main.vala
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 1289 ms
+Time: 1285 ms
 
 
 ~~~
@@ -283,14 +293,14 @@ Unsafe: (byte array with tos() to string conversion)
 + v -prod src/main/v/main.v -o target/vmain
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 359 ms
+Time: 356 ms
 
 With strings.Builder
 
 + v -prod src/main/v/main-builder.v -o target/vmainb
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 785 ms
+Time: 769 ms
 ~~~
 
 Zig:
@@ -302,5 +312,5 @@ Zig:
 + zig build-exe -O ReleaseFast ../src/mainzig.zig
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 316 ms
+Time: 315 ms
 ~~~

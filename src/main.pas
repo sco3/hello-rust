@@ -38,5 +38,5 @@ begin
   ToTime := Now;
   DiffMinutes := MillisecondsBetween(ToTime, FromTime);
   writeln('Random numbers parsed: ', n, ' str: ', str, ' num: ', num: 17: 8);
-  writeln('Time: ', DiffMinutes);
+  writeln('Time: ', DiffMinutes,'ms');
 end.

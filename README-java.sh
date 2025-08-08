@@ -45,5 +45,13 @@ $(bash -x -c '~/prg/graalvm/bin/native-image -O3 --no-fallback -cp "target:lib/*
 
 $(target/MainFast)
 
+
+Java compiled to Wasm
+
+$( bash -x -c '~/prg/graalvm/bin/native-image --tool:svm-wasm Main -cp "target:lib/*" target/java-wasm > /dev/null' 2>&1)
+
+$( bash -x -c 'node target/java-wasm' )
+
+
 ~~~
 EOF
