@@ -1,6 +1,14 @@
+use wasm_bindgen::prelude::*;
+
 use std::time::Instant;
 
-fn run() {
+#[wasm_bindgen]
+pub fn wasm_run() {
+    run();
+}
+
+
+pub fn run() {
     let timer = Instant::now();
     let cnt = 10_000_000;
     let mut str = String::with_capacity(17);
@@ -9,25 +17,18 @@ fn run() {
 
     for _i in 0..cnt {
         str.clear();
-
-        str.push_str(&"0".repeat(17));
-
         for j in 0..17 {
             if j == 8 {
-                str.replace_range(j..j + 1, ".");
+                str.push('.');
             } else {
                 seed = (((seed + 7) << 4) / 11) & 0xffffff;
                 let c = (('0' as u8) + ((seed % 10) as u8)) as char;
-                str.replace_range(j..j + 1, &c.to_string());
+                str.push(c)
             }
         }
         num = str.parse().unwrap();
     }
-
     println!("Random numbers parsed: {} str: {} num: {} ", cnt, str, num);
     println!("Time: {} ms", timer.elapsed().as_millis());
 }
 
-fn main() {
-    run();
-}
