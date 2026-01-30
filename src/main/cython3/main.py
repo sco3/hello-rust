@@ -2,7 +2,6 @@ import time
 
 import cython
 
-
 ZERO: cython.int = ord("0")
 
 
@@ -24,7 +23,7 @@ def main():
     """
 
     start = time.time_ns()
-    
+
     # Use bytearray for both compiled and non-compiled modes
     slist = bytearray(17)
     slist[8] = ord(".")
