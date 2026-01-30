@@ -4,6 +4,8 @@ use std::time::Instant;
 
 #[wasm_bindgen]
 pub fn wasm_run() {
+    #[cfg(feature = "console_error_panic_hook")]
+    console_error_panic_hook::set_once();
     run();
 }
 
@@ -26,7 +28,16 @@ pub fn run() {
                 str.push(c)
             }
         }
-        num = str.parse().unwrap();
+        // num = str.parse().unwrap();
+        match str.parse() {
+            Ok(parsed_num) => num = parsed_num,
+            Err(e) => {
+                // Handle the error here without panicking
+                // You can log the error, print a message, or simply break the loop.
+                println!("Error parsing string '{}': {}", str, e);
+                break;
+            }
+        }
     }
     println!("Random numbers parsed: {} str: {} num: {} ", cnt, str, num);
     println!("Time: {} ms", timer.elapsed().as_millis());

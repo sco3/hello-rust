@@ -3,25 +3,10 @@ import time
 import cython
 
 
-if cython.compiled:
-    from cython.cimports.libc.stdlib import malloc, free
-    from cython.cimports.libc.string import strcpy
-    from cython import cast
-else:
-    from ctypes import CDLL, c_char_p, c_void_p, c_size_t, cast
-
-    libc = CDLL("libc.so.6")
-
-    def malloc(size: int) -> c_void_p:
-        return libc.malloc(size)
-
-    def free(ptr: c_void_p) -> None:
-        libc.free(ptr)
-
 ZERO: cython.int = ord("0")
 
 
-def gen(seed: cython.int, slist: cython.p_char):
+def gen(seed: cython.int, slist: cython.uchar[:]):
     """
     Generates pseudo random number
     """
@@ -39,11 +24,9 @@ def main():
     """
 
     start = time.time_ns()
-    slist: cython.p_char = cast(cython.p_char, malloc(17))
-
-    if not slist:
-        raise MemoryError("Failed to allocate memory")
-
+    
+    # Use bytearray for both compiled and non-compiled modes
+    slist = bytearray(17)
     slist[8] = ord(".")
 
     num: cython.double = 0.0
@@ -53,12 +36,9 @@ def main():
     try:
         for _ in range(n):
             seed = gen(seed, slist)
-            s = slist[:17].decode("utf-8")
+            s = slist.decode("utf-8")
             num = float(s)
     except RuntimeError as e:
         print(f"An error occurred: {e}")
     finally:
-        free(slist)
         print(f"Random numbers parsed: {n} str: {s} num: {num}")
-        duration = int((time.time_ns() - start) / 1000000)
-        print(f"Time: {duration} ms")
