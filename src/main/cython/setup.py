@@ -3,13 +3,11 @@ from setuptools import Extension
 from Cython.Build import cythonize
 
 
-
-
 extensions = [
     Extension(
         "gen", ["gen.pyx"],
         extra_compile_args=['-O3']
-    )  
+    )
 ]
 
 setup(
