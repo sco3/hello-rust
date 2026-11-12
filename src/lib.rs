@@ -15,7 +15,7 @@ pub fn run() {
     let cnt = 10_000_000;
     let mut str = String::with_capacity(17);
     let mut num: f64 = 0.0;
-    let mut seed: i32 = 1;
+    let mut seed: u32 = 1;
 
     for _i in 0..cnt {
         str.clear();

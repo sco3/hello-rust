@@ -4,7 +4,7 @@ import os;
 fn main() {
     var str: u8[17] = ['0'; 17];
     str[8] = '.';
-    var seed: i32 = 1;
+    var seed: u32 = 1;
     var num: f64 = 0.0;
     const N: i32 = 10000000;
 
