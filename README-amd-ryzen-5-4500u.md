@@ -64,6 +64,7 @@ Time: 405 ms
 
 ~~~
 
+
 Goose:
 ---
 
@@ -72,5 +73,5 @@ Goose:
 + goose build src/main.goose -o target/main-goose
 
 Random numbers parsed: 10000000 str: 46706439.74837267 num: 46706439.74837267
-Time: 458ms
+Time: 460 ms
 ~~~

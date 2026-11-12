@@ -22,5 +22,5 @@ fn main() {
     }
     var took: u32 = (1000*(clock() - start) ) as u32;
     print("Random numbers parsed: ", N, " str: ", str, " num: ", num);
-    print("Time: ", took ,    "ms");
+    print("Time: ", took ,    " ms");
 }
